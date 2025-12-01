@@ -2802,32 +2802,30 @@
         function initNavigation() {
             const navToggle = document.getElementById('navToggle');
             const siteNav = document.getElementById('siteNav');
-            let navVisible = false;
 
-            navToggle.addEventListener('click', () => {
-                navVisible = !navVisible;
-                siteNav.classList.toggle('visible', navVisible);
-                navToggle.classList.toggle('nav-open', navVisible);
-                navToggle.textContent = navVisible ? '✕' : '☰';
-            });
+            if (navToggle && siteNav) {
+                navToggle.addEventListener('click', () => {
+                    const isOpen = siteNav.classList.toggle('open');
+                    navToggle.textContent = isOpen ? '✕' : '☰';
+                    navToggle.setAttribute('aria-expanded', isOpen);
+                });
 
-            document.addEventListener('click', (e) => {
-                if (navVisible && !siteNav.contains(e.target) && !navToggle.contains(e.target)) {
-                    navVisible = false;
-                    siteNav.classList.remove('visible');
-                    navToggle.classList.remove('nav-open');
-                    navToggle.textContent = '☰';
-                }
-            });
+                document.addEventListener('click', (e) => {
+                    if (!siteNav.contains(e.target) && !navToggle.contains(e.target) && siteNav.classList.contains('open')) {
+                        siteNav.classList.remove('open');
+                        navToggle.textContent = '☰';
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
 
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && navVisible) {
-                    navVisible = false;
-                    siteNav.classList.remove('visible');
-                    navToggle.classList.remove('nav-open');
-                    navToggle.textContent = '☰';
-                }
-            });
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && siteNav.classList.contains('open')) {
+                        siteNav.classList.remove('open');
+                        navToggle.textContent = '☰';
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
