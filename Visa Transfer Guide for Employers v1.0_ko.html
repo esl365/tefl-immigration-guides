@@ -197,6 +197,155 @@
         }
 
         /* ========================================
+           SITE NAVIGATION
+           ======================================== */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--bg-elevated);
+            border-bottom: 1px solid var(--border);
+            padding: 0 20px;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .site-nav.visible {
+            transform: translateY(0);
+            box-shadow: var(--shadow-md);
+        }
+
+        .site-nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+            gap: 16px;
+        }
+
+        .site-nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 700;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .site-nav-brand:hover {
+            color: var(--primary);
+        }
+
+        .site-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 8px 0;
+        }
+
+        .site-nav-links::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text-secondary);
+        }
+
+        .nav-link:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(20, 184, 166, 0.1);
+        }
+
+        [data-theme="dark"] .nav-link:hover {
+            background: rgba(20, 184, 166, 0.15);
+        }
+
+        .nav-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .nav-link.teacher {
+            border-color: var(--border);
+        }
+
+        .nav-link.teacher:hover {
+            border-color: #6366f1;
+            color: #6366f1;
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .nav-toggle {
+            position: fixed;
+            top: 12px;
+            left: 12px;
+            z-index: 1001;
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .nav-toggle.nav-open {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .site-nav-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 12px 0;
+                gap: 10px;
+            }
+
+            .site-nav-links {
+                width: 100%;
+                justify-content: flex-start;
+            }
+        }
+
+        /* ========================================
            FLOATING ACTIONS
            ======================================== */
         .floating-actions {
@@ -1488,6 +1637,33 @@
 <body>
     <a href="#main-content" class="skip-link">본문으로 이동</a>
 
+    <!-- Navigation Toggle -->
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기/닫기">☰</button>
+
+    <!-- Site Navigation -->
+    <nav class="site-nav" id="siteNav">
+        <div class="site-nav-inner">
+            <a href="index.html" class="site-nav-brand">
+                <span>🏠</span>
+                <span>TEFL Guides</span>
+            </a>
+            <div class="site-nav-links">
+                <a href="New Teachers Guide v1.0_en.html" class="nav-link">
+                    <span>🆕</span> New Teachers
+                </a>
+                <a href="TEFL Teachers Visa Transfer Guide v4.0_en.html" class="nav-link">
+                    <span>🔄</span> Visa Transfer
+                </a>
+                <a href="New Teachers Guide for Employers v1.0_ko.html" class="nav-link employer">
+                    <span>🏫</span> 신규강사 (고용주)
+                </a>
+                <a href="Visa Transfer Guide for Employers v1.0_ko.html" class="nav-link employer active">
+                    <span>🏫</span> 이직강사 (고용주)
+                </a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Floating Actions -->
     <div class="floating-actions">
         <button class="fab" id="themeToggle" aria-label="다크모드 전환" title="다크모드 전환">
@@ -2579,6 +2755,29 @@
             });
         });
 
+        // Navigation
+        function initNavigation() {
+            const navToggle = document.getElementById('navToggle');
+            const siteNav = document.getElementById('siteNav');
+
+            if (navToggle && siteNav) {
+                navToggle.addEventListener('click', () => {
+                    const isOpen = siteNav.classList.toggle('open');
+                    navToggle.textContent = isOpen ? '✕' : '☰';
+                    navToggle.setAttribute('aria-expanded', isOpen);
+                });
+
+                // Close nav when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!siteNav.contains(e.target) && !navToggle.contains(e.target) && siteNav.classList.contains('open')) {
+                        siteNav.classList.remove('open');
+                        navToggle.textContent = '☰';
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        }
+
         // Init
         document.addEventListener('DOMContentLoaded', () => {
             loadState();
@@ -2588,6 +2787,7 @@
             initAccordion();
             initStickyProgress();
             updateProgress();
+            initNavigation();
         });
     </script>
 </body>
