@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEFL Teacher Guides - Korea</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --teal: #14b8a6;
+            --teal-dark: #0d9488;
+            --bg: #fafafa;
+            --text: #18181b;
+            --text-muted: #71717a;
+            --card-bg: #ffffff;
+            --border: #e4e4e7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #09090b;
+                --text: #fafafa;
+                --text-muted: #a1a1aa;
+                --card-bg: #18181b;
+                --border: #27272a;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--teal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .guide-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .guide-card.teacher {
+            border-top: 4px solid var(--primary);
+        }
+
+        .guide-card.employer {
+            border-top: 4px solid var(--teal);
+        }
+
+        .guide-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            width: fit-content;
+        }
+
+        .guide-card.teacher .guide-badge {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+        }
+
+        .guide-card.employer .guide-badge {
+            background: rgba(20, 184, 166, 0.1);
+            color: var(--teal);
+        }
+
+        .guide-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .guide-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            flex-grow: 1;
+            margin-bottom: 16px;
+        }
+
+        .guide-lang {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 40px 0;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TEFL Teacher Guides</h1>
+            <p class="subtitle">Comprehensive guides for E-2 visa teachers and employers in South Korea</p>
+        </header>
+
+        <p class="section-title">For Teachers (영어)</p>
+        <div class="guides-grid">
+            <a href="New Teachers Guide v1.0_en.html" class="guide-card teacher">
+                <span class="guide-badge">New Teachers</span>
+                <h2 class="guide-title">New Teachers Guide</h2>
+                <p class="guide-desc">Complete guide for teachers arriving in Korea for the first time. Covers health check, ARC registration, and Education Office requirements.</p>
+                <span class="guide-lang">🇬🇧 English</span>
+            </a>
+            <a href="TEFL Teachers Visa Transfer Guide v4.0_en.html" class="guide-card teacher">
+                <span class="guide-badge">Visa Transfer</span>
+                <h2 class="guide-title">Visa Transfer Guide</h2>
+                <p class="guide-desc">Step-by-step guide for teachers changing workplaces within Korea. Includes 15-day deadline calculator and document checklist.</p>
+                <span class="guide-lang">🇬🇧 English</span>
+            </a>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="section-title">For Employers (한국어)</p>
+        <div class="guides-grid">
+            <a href="New Teachers Guide for Employers v1.0_ko.html" class="guide-card employer">
+                <span class="guide-badge">신규 강사</span>
+                <h2 class="guide-title">신규 외국인 강사 입국 후 절차 안내</h2>
+                <p class="guide-desc">해외에서 새로 입국하는 E-2 비자 강사 채용 시 고용주가 준비해야 할 서류와 절차를 안내합니다.</p>
+                <span class="guide-lang">🇰🇷 한국어</span>
+            </a>
+            <a href="Visa Transfer Guide for Employers v1.0_ko.html" class="guide-card employer">
+                <span class="guide-badge">이직 강사</span>
+                <h2 class="guide-title">이직 강사 채용 가이드</h2>
+                <p class="guide-desc">국내 다른 학원에서 이직해 오는 E-2 비자 강사 채용 시 15일 이내 신고 등 필수 절차를 안내합니다.</p>
+                <span class="guide-lang">🇰🇷 한국어</span>
+            </a>
+        </div>
+
+        <footer>
+            <p>Created by <strong>Kang & Kriel Recruitment</strong></p>
+        </footer>
+    </div>
+</body>
+</html>

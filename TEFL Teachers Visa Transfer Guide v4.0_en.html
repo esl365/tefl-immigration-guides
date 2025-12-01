@@ -1,0 +1,2968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>TEFL Visa Transfer Guide v4.0</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           CSS VARIABLES - DESIGN TOKENS
+           ======================================== */
+        :root {
+            /* Primary Colors - Indigo */
+            --primary-50: #eef2ff;
+            --primary-100: #e0e7ff;
+            --primary-200: #c7d2fe;
+            --primary-300: #a5b4fc;
+            --primary-400: #818cf8;
+            --primary-500: #6366f1;
+            --primary-600: #4f46e5;
+            --primary-700: #4338ca;
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+
+            /* Accent Colors - Amber */
+            --accent-400: #fbbf24;
+            --accent-500: #f59e0b;
+            --accent-600: #d97706;
+            --accent: #f59e0b;
+
+            /* Semantic Colors */
+            --success-50: #ecfdf5;
+            --success-100: #d1fae5;
+            --success-400: #34d399;
+            --success-500: #10b981;
+            --success-600: #059669;
+            --success: #10b981;
+
+            --warning-50: #fffbeb;
+            --warning-400: #fbbf24;
+            --warning-500: #f59e0b;
+            --warning: #f59e0b;
+
+            --danger-50: #fef2f2;
+            --danger-400: #f87171;
+            --danger-500: #ef4444;
+            --danger-600: #dc2626;
+            --danger: #ef4444;
+
+            /* Neutral Colors */
+            --gray-50: #fafafa;
+            --gray-100: #f4f4f5;
+            --gray-200: #e4e4e7;
+            --gray-300: #d4d4d8;
+            --gray-400: #a1a1aa;
+            --gray-500: #71717a;
+            --gray-600: #52525b;
+            --gray-700: #3f3f46;
+            --gray-800: #27272a;
+            --gray-900: #18181b;
+            --gray-950: #09090b;
+
+            /* Light Theme */
+            --bg: #fafafa;
+            --bg-elevated: #ffffff;
+            --bg-card: #ffffff;
+            --bg-hover: #f4f4f5;
+            --text: #18181b;
+            --text-secondary: #3f3f46;
+            --text-muted: #71717a;
+            --border: #e4e4e7;
+            --border-light: #f4f4f5;
+
+            /* Shadows - Multi-layer for realism */
+            --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+            --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.15);
+            --shadow-glow-success: 0 0 40px rgba(16, 185, 129, 0.2);
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-2xl: 32px;
+            --radius-full: 9999px;
+
+            /* Transitions */
+            --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+            /* Z-Index Scale */
+            --z-dropdown: 100;
+            --z-sticky: 200;
+            --z-modal: 300;
+            --z-toast: 400;
+            --z-tooltip: 500;
+
+            /* Focus Ring */
+            --focus-ring: 0 0 0 3px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Dark Theme */
+        [data-theme="dark"] {
+            --bg: #09090b;
+            --bg-elevated: #18181b;
+            --bg-card: #18181b;
+            --bg-hover: #27272a;
+            --text: #fafafa;
+            --text-secondary: #d4d4d8;
+            --text-muted: #a1a1aa;
+            --border: #27272a;
+            --border-light: #3f3f46;
+
+            --shadow-xs: 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -1px rgba(0,0,0,0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -2px rgba(0,0,0,0.3);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.5), 0 10px 10px -5px rgba(0,0,0,0.3);
+            --shadow-glow: 0 0 60px rgba(99, 102, 241, 0.3);
+        }
+
+        /* ========================================
+           BASE STYLES
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 16px;
+            min-height: 100vh;
+            min-height: 100dvh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 10000;
+            transition: top 0.3s var(--ease-out);
+        }
+
+        .skip-link:focus {
+            top: 20px;
+        }
+
+        /* Focus Styles */
+        :focus-visible {
+            outline: none;
+            box-shadow: var(--focus-ring);
+        }
+
+        /* Container */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========================================
+           FLOATING ACTIONS
+           ======================================== */
+        .floating-actions {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: var(--z-sticky);
+            display: flex;
+            gap: 12px;
+        }
+
+        .fab {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            border: none;
+            background: var(--bg-card);
+            color: var(--text);
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s var(--ease-out);
+            backdrop-filter: blur(10px);
+        }
+
+        .fab:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .fab:active {
+            transform: scale(0.95);
+        }
+
+        /* Print & Download Buttons */
+        .bottom-actions {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: var(--z-sticky);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .action-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 24px;
+            border-radius: var(--radius-full);
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .action-pill--primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .action-pill--primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .action-pill--accent {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-600) 100%);
+            color: white;
+        }
+
+        .action-pill--accent:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(245, 158, 11, 0.4);
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            position: relative;
+            padding: 60px 20px 80px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.3), transparent),
+                radial-gradient(ellipse 60% 50% at 80% 50%, rgba(168, 85, 247, 0.2), transparent),
+                radial-gradient(ellipse 50% 40% at 20% 80%, rgba(59, 130, 246, 0.2), transparent),
+                linear-gradient(180deg, var(--primary-600) 0%, var(--primary-700) 100%);
+            z-index: -2;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Quick Stats */
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: var(--radius-lg);
+            padding: 20px 16px;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .stat-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-4px);
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* CTA Button */
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--primary);
+            padding: 16px 32px;
+            border-radius: var(--radius-full);
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s var(--ease-spring);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-xl), 0 0 40px rgba(255,255,255,0.3);
+        }
+
+        .hero-cta .arrow {
+            transition: transform 0.3s var(--ease-out);
+        }
+
+        .hero-cta:hover .arrow {
+            transform: translateY(3px);
+        }
+
+        /* Checklist Preview */
+        .checklist-preview {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .checklist-preview-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .checklist-preview-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* ========================================
+           PROGRESS TRACKER - STICKY
+           ======================================== */
+        .progress-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: var(--z-sticky);
+            background: var(--bg);
+            padding: 16px 0;
+            margin-bottom: 20px;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .progress-wrapper.scrolled {
+            background: var(--bg-elevated);
+            box-shadow: var(--shadow-md);
+            padding: 12px 0;
+        }
+
+        .progress-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 20px 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+
+        .progress-wrapper.scrolled .progress-card {
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .progress-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .progress-title-icon {
+            font-size: 1.25rem;
+        }
+
+        .progress-percentage {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        .progress-bar-container {
+            position: relative;
+            height: 12px;
+            background: var(--gray-200);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+
+        [data-theme="dark"] .progress-bar-container {
+            background: var(--gray-800);
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: var(--radius-full);
+            background: linear-gradient(90deg, var(--success) 0%, var(--success-400) 100%);
+            transition: width 0.6s var(--ease-out);
+            position: relative;
+        }
+
+        .progress-bar-fill::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .progress-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            background: var(--bg-hover);
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            transition: all 0.2s var(--ease-out);
+        }
+
+        .progress-step.complete {
+            background: var(--success-50);
+            color: var(--success-600);
+        }
+
+        [data-theme="dark"] .progress-step.complete {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success-400);
+        }
+
+        .progress-step-indicator {
+            width: 24px;
+            height: 24px;
+            border-radius: var(--radius-full);
+            background: var(--gray-300);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gray-600);
+            flex-shrink: 0;
+        }
+
+        .progress-step.complete .progress-step-indicator {
+            background: var(--success);
+            color: white;
+        }
+
+        .progress-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s var(--ease-out);
+        }
+
+        .btn--ghost {
+            background: transparent;
+            color: var(--text-muted);
+        }
+
+        .btn--ghost:hover {
+            background: var(--bg-hover);
+            color: var(--text);
+        }
+
+        .btn--danger {
+            background: var(--danger-50);
+            color: var(--danger);
+        }
+
+        .btn--danger:hover {
+            background: var(--danger);
+            color: white;
+        }
+
+        [data-theme="dark"] .btn--danger {
+            background: rgba(239, 68, 68, 0.15);
+        }
+
+        /* ========================================
+           D-DAY CALCULATOR
+           ======================================== */
+        .dday-section {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid var(--warning);
+        }
+
+        .dday-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .dday-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--warning) 0%, var(--accent-600) 100%);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .dday-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .dday-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .dday-input-group {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .dday-input-group label {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .dday-input {
+            padding: 14px 18px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: inherit;
+            background: var(--bg);
+            color: var(--text);
+            transition: all 0.2s var(--ease-out);
+            min-width: 200px;
+        }
+
+        .dday-input:focus {
+            border-color: var(--primary);
+            box-shadow: var(--focus-ring);
+        }
+
+        .dday-result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            display: none;
+            animation: slideUp 0.3s var(--ease-out);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dday-result.show { display: block; }
+
+        .dday-result.safe {
+            background: var(--success-50);
+            border: 1px solid var(--success-400);
+        }
+
+        .dday-result.warning {
+            background: var(--warning-50);
+            border: 1px solid var(--warning-400);
+        }
+
+        .dday-result.urgent {
+            background: var(--danger-50);
+            border: 1px solid var(--danger-400);
+            animation: pulse-border 2s infinite;
+        }
+
+        [data-theme="dark"] .dday-result.safe { background: rgba(16, 185, 129, 0.1); }
+        [data-theme="dark"] .dday-result.warning { background: rgba(245, 158, 11, 0.1); }
+        [data-theme="dark"] .dday-result.urgent { background: rgba(239, 68, 68, 0.1); }
+
+        @keyframes pulse-border {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+        }
+
+        .dday-countdown {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .dday-date {
+            font-size: 1rem;
+            margin-top: 8px;
+            opacity: 0.8;
+        }
+
+        /* ========================================
+           TIMELINE STEPS
+           ======================================== */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .step {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .step-marker {
+            position: absolute;
+            left: -40px;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--bg-card);
+            border: 3px solid var(--border);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 1;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .step.active .step-marker,
+        .step.complete .step-marker {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .step.complete .step-marker {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .step-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .step-header {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-card);
+            transition: background 0.2s var(--ease-out);
+            user-select: none;
+        }
+
+        .step-header:hover {
+            background: var(--bg-hover);
+        }
+
+        .step-header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-100);
+            color: var(--primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        [data-theme="dark"] .step-number {
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        .step.complete .step-number {
+            background: var(--success-100);
+            color: var(--success);
+        }
+
+        [data-theme="dark"] .step.complete .step-number {
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+
+        .step-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .step-header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: var(--bg-hover);
+            color: var(--text-muted);
+        }
+
+        .step.complete .step-badge {
+            background: var(--success-100);
+            color: var(--success);
+        }
+
+        [data-theme="dark"] .step.complete .step-badge {
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .step-chevron {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            transition: transform 0.3s var(--ease-out);
+        }
+
+        .step.open .step-chevron {
+            transform: rotate(180deg);
+        }
+
+        .step-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s var(--ease-out);
+        }
+
+        .step.open .step-content {
+            grid-template-rows: 1fr;
+        }
+
+        .step-content-inner {
+            overflow: hidden;
+        }
+
+        .step-body {
+            padding: 0 24px 24px;
+        }
+
+        .responsibility-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--primary-50);
+            color: var(--primary);
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        [data-theme="dark"] .responsibility-tag {
+            background: rgba(99, 102, 241, 0.15);
+        }
+
+        /* ========================================
+           CHECKLIST ITEMS
+           ======================================== */
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 20px;
+            background: var(--bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            transition: all 0.2s var(--ease-out);
+            cursor: pointer;
+        }
+
+        .checklist-item:hover {
+            border-color: var(--primary-300);
+            background: var(--bg-hover);
+        }
+
+        .checklist-item.checked {
+            background: var(--success-50);
+            border-color: var(--success-400);
+        }
+
+        [data-theme="dark"] .checklist-item.checked {
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .checklist-item.checked .checklist-item-title {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        /* Custom Checkbox */
+        .checkbox {
+            width: 28px;
+            height: 28px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s var(--ease-out);
+            position: relative;
+            background: var(--bg-card);
+        }
+
+        .checkbox::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border-radius: var(--radius-full);
+            background: var(--primary);
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .checklist-item:active .checkbox::before {
+            opacity: 0.1;
+            transform: scale(1);
+        }
+
+        .checkbox svg {
+            width: 16px;
+            height: 16px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.2s var(--ease-spring);
+        }
+
+        .checklist-item.checked .checkbox {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .checklist-item.checked .checkbox svg {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .checklist-item-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .checklist-item-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .checklist-item-korean {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .checklist-item-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            background: var(--bg-card);
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+
+        .meta-tag--provider {
+            background: var(--primary-50);
+            color: var(--primary);
+            border-color: var(--primary-200);
+        }
+
+        [data-theme="dark"] .meta-tag--provider {
+            background: rgba(99, 102, 241, 0.15);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .meta-tag--page {
+            background: var(--accent-400);
+            color: var(--gray-900);
+            border-color: transparent;
+        }
+
+        .meta-tag--warning {
+            background: var(--danger-50);
+            color: var(--danger);
+            border-color: var(--danger-400);
+        }
+
+        [data-theme="dark"] .meta-tag--warning {
+            background: rgba(239, 68, 68, 0.15);
+        }
+
+        /* ========================================
+           INFO & WARNING BOXES
+           ======================================== */
+        .info-box {
+            display: flex;
+            gap: 16px;
+            padding: 20px;
+            background: var(--primary-50);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--primary);
+            margin: 20px 0;
+        }
+
+        [data-theme="dark"] .info-box {
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .info-box-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-box-content {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .info-box-content strong {
+            color: var(--text);
+        }
+
+        .warning-box {
+            background: var(--warning-50);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            margin: 30px 0;
+            border: 2px solid var(--warning);
+        }
+
+        [data-theme="dark"] .warning-box {
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+        .warning-box-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .warning-box-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--warning);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .warning-box-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-600);
+        }
+
+        [data-theme="dark"] .warning-box-title {
+            color: var(--warning);
+        }
+
+        .warning-box ul {
+            margin-left: 24px;
+            color: var(--text-secondary);
+        }
+
+        .warning-box li {
+            margin: 10px 0;
+        }
+
+        /* ========================================
+           FAQ SECTION
+           ======================================== */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 40px 0 20px;
+        }
+
+        .section-title-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-100);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        [data-theme="dark"] .section-title-icon {
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.2s var(--ease-out);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-300);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 18px 20px;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            font-family: inherit;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-hover);
+        }
+
+        .faq-chevron {
+            font-size: 1rem;
+            color: var(--text-muted);
+            transition: transform 0.3s var(--ease-out);
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s var(--ease-out);
+        }
+
+        .faq-item.open .faq-answer {
+            grid-template-rows: 1fr;
+        }
+
+        .faq-answer-inner {
+            overflow: hidden;
+        }
+
+        .faq-answer-content {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           TABLES
+           ======================================== */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .data-table th {
+            background: var(--primary);
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .data-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-card);
+        }
+
+        .data-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tbody tr:hover td {
+            background: var(--bg-hover);
+        }
+
+        .matrix-dot {
+            color: var(--success);
+            font-size: 1.5rem;
+        }
+
+        /* ========================================
+           DOWNLOAD SECTION
+           ======================================== */
+        .download-section {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            margin: 30px 0;
+            border: 1px solid var(--border);
+        }
+
+        .download-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: var(--shadow-md), 0 0 20px rgba(239, 68, 68, 0.3);
+            transition: all 0.3s var(--ease-out);
+            animation: glow-pulse 2s infinite;
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: var(--shadow-md), 0 0 20px rgba(239, 68, 68, 0.3); }
+            50% { box-shadow: var(--shadow-lg), 0 0 40px rgba(239, 68, 68, 0.5); }
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: var(--shadow-xl), 0 0 50px rgba(239, 68, 68, 0.5);
+        }
+
+        /* ========================================
+           COST SUMMARY
+           ======================================== */
+        .cost-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            border: 1px solid var(--border);
+            margin: 30px 0;
+        }
+
+        .cost-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cost-row:last-child {
+            border-bottom: none;
+            padding-top: 20px;
+            margin-top: 10px;
+            border-top: 2px solid var(--border);
+        }
+
+        .cost-label {
+            color: var(--text-secondary);
+        }
+
+        .cost-value {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .cost-row:last-child .cost-label,
+        .cost-row:last-child .cost-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .cost-row:last-child .cost-value {
+            color: var(--primary);
+        }
+
+        /* ========================================
+           CONTACT CARD
+           ======================================== */
+        .contact-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-700) 100%);
+            border-radius: var(--radius-2xl);
+            padding: 32px;
+            color: white;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+        }
+
+        .contact-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .contact-tagline {
+            opacity: 0.9;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            position: relative;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-message {
+            font-style: italic;
+            margin-bottom: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-secondary);
+        }
+
+        .footer-meta {
+            font-size: 0.85rem;
+        }
+
+        /* ========================================
+           TOAST NOTIFICATIONS
+           ======================================== */
+        .toast-container {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: var(--z-toast);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            pointer-events: none;
+        }
+
+        .toast {
+            background: var(--gray-900);
+            color: white;
+            padding: 14px 24px;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-xl);
+            opacity: 0;
+            transform: translateY(20px) scale(0.9);
+            transition: all 0.3s var(--ease-out);
+            pointer-events: auto;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .toast--success {
+            background: var(--success);
+        }
+
+        .toast--warning {
+            background: var(--warning);
+            color: var(--gray-900);
+        }
+
+        .toast--error {
+            background: var(--danger);
+        }
+
+        /* ========================================
+           PRINT STYLES
+           ======================================== */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .no-print,
+            .floating-actions,
+            .bottom-actions,
+            .dday-section,
+            .progress-wrapper,
+            .toast-container {
+                display: none !important;
+            }
+
+            .hero {
+                background: #4f46e5 !important;
+                border-radius: 0;
+                padding: 30px 20px;
+            }
+
+            .step-content {
+                grid-template-rows: 1fr !important;
+            }
+
+            .faq-answer {
+                grid-template-rows: 1fr !important;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+        }
+
+        /* ========================================
+           MOBILE RESPONSIVE
+           ======================================== */
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 80px;
+            }
+
+            .hero {
+                padding: 40px 16px 60px;
+                border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .quick-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+
+            .stat-card {
+                padding: 14px 10px;
+            }
+
+            .stat-value {
+                font-size: 1.2rem;
+            }
+
+            .stat-label {
+                font-size: 0.7rem;
+            }
+
+            .floating-actions {
+                top: 12px;
+                right: 12px;
+            }
+
+            .fab {
+                width: 42px;
+                height: 42px;
+            }
+
+            /* Mobile: Compact sticky progress */
+            .progress-wrapper {
+                padding: 8px 0;
+                margin-bottom: 12px;
+            }
+
+            .progress-wrapper.scrolled {
+                padding: 6px 0;
+            }
+
+            .progress-card {
+                padding: 12px 16px;
+                border-radius: var(--radius-lg);
+            }
+
+            .progress-header {
+                margin-bottom: 10px;
+            }
+
+            .progress-title {
+                font-size: 0.85rem;
+            }
+
+            .progress-title-icon {
+                font-size: 1rem;
+            }
+
+            .progress-percentage {
+                font-size: 1.25rem;
+            }
+
+            .progress-bar-container {
+                height: 8px;
+            }
+
+            /* Hide detailed steps and actions when scrolled on mobile */
+            .progress-wrapper.scrolled .progress-steps,
+            .progress-wrapper.scrolled .progress-actions {
+                display: none;
+            }
+
+            .progress-wrapper.scrolled .progress-header {
+                margin-bottom: 8px;
+            }
+
+            .progress-wrapper.scrolled .progress-card {
+                padding: 10px 16px;
+            }
+
+            /* Mini progress bar only when scrolled */
+            .progress-wrapper.scrolled .progress-bar-container {
+                height: 6px;
+            }
+
+            .progress-steps {
+                grid-template-columns: 1fr;
+                gap: 6px;
+                margin-top: 10px;
+            }
+
+            .progress-step {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+            }
+
+            .progress-step-indicator {
+                width: 20px;
+                height: 20px;
+                font-size: 0.7rem;
+            }
+
+            .progress-actions {
+                margin-top: 10px;
+                gap: 6px;
+            }
+
+            .progress-actions .btn {
+                padding: 8px 12px;
+                font-size: 0.75rem;
+            }
+
+            .timeline {
+                padding-left: 30px;
+            }
+
+            .step-marker {
+                left: -30px;
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
+            }
+
+            .step-header {
+                padding: 16px;
+                flex-wrap: wrap;
+            }
+
+            .step-header-left {
+                flex: 1;
+            }
+
+            .step-badge {
+                display: none;
+            }
+
+            .step-body {
+                padding: 0 16px 16px;
+            }
+
+            .checklist-item {
+                padding: 14px 16px;
+            }
+
+            .dday-input-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .dday-input {
+                width: 100%;
+            }
+
+            .bottom-actions {
+                bottom: 16px;
+                right: 16px;
+                left: 16px;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .action-pill {
+                padding: 12px 20px;
+                font-size: 0.85rem;
+            }
+
+            .data-table {
+                font-size: 0.8rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 10px 12px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .download-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-cta {
+                padding: 14px 24px;
+                font-size: 0.9rem;
+            }
+
+            .progress-percentage {
+                font-size: 1.5rem;
+            }
+
+            .step-number {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+
+            .step-title {
+                font-size: 1rem;
+            }
+        }
+
+        /* ========================================
+           REDUCED MOTION
+           ======================================== */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* ========================================
+           HIGH CONTRAST
+           ======================================== */
+        @media (forced-colors: active) {
+            .checkbox {
+                border: 2px solid CanvasText;
+            }
+
+            .checkbox.checked {
+                background: Highlight;
+            }
+
+            .btn, .action-pill, .hero-cta {
+                border: 2px solid CanvasText;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions no-print">
+        <button class="fab" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle Theme">
+            <span id="themeIcon">🌙</span>
+        </button>
+    </div>
+
+    <!-- Bottom Actions -->
+    <div class="bottom-actions no-print">
+        <button class="action-pill action-pill--primary" onclick="window.print()">
+            🖨️ Print
+        </button>
+        <button class="action-pill action-pill--accent" onclick="downloadPDF()">
+            📥 Download PDF
+        </button>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>🇰🇷</span>
+                <span>Version 4.0</span>
+            </div>
+
+            <h1>TEFL Visa Transfer Guide</h1>
+            <p class="hero-subtitle">Your complete interactive checklist for a smooth transition to your new teaching position in Korea.</p>
+
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <span class="stat-value">15</span>
+                    <span class="stat-label">Days Deadline</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">₩60K</span>
+                    <span class="stat-label">Total Fee</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="totalDocsHero">19</span>
+                    <span class="stat-label">Documents</span>
+                </div>
+            </div>
+
+            <a href="#checklist" class="hero-cta">
+                Start Checklist
+                <span class="arrow">↓</span>
+            </a>
+
+            <div class="checklist-preview">
+                <div class="checklist-preview-title">📋 Application Form - Check ALL 3 boxes:</div>
+                <div class="checklist-preview-item">☑️ CHANGE OR ADDITION OF WORKPLACE</div>
+                <div class="checklist-preview-item">☑️ EXTENSION OF SOJOURN PERIOD</div>
+                <div class="checklist-preview-item">☑️ ALTERATION OF RESIDENCE</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="main-content">
+        <!-- Progress Tracker -->
+        <div class="progress-wrapper no-print" id="progressWrapper">
+            <div class="progress-card">
+                <div class="progress-header">
+                    <div class="progress-title">
+                        <span class="progress-title-icon">📊</span>
+                        Your Progress
+                    </div>
+                    <div class="progress-percentage" id="progressPercent">0%</div>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+
+                <div class="progress-steps" id="progressSteps">
+                    <div class="progress-step" data-step="1">
+                        <div class="progress-step-indicator">1</div>
+                        <span>Step 1: <span id="step1Count">0/3</span></span>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="progress-step-indicator">2</div>
+                        <span>Step 2: <span id="step2Count">0/8</span></span>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="progress-step-indicator">3</div>
+                        <span>Step 3: <span id="step3Count">0/8</span></span>
+                    </div>
+                </div>
+
+                <div class="progress-actions">
+                    <button class="btn btn--ghost" onclick="expandAllSteps()">📂 Expand All</button>
+                    <button class="btn btn--ghost" onclick="collapseAllSteps()">📁 Collapse All</button>
+                    <button class="btn btn--danger" onclick="resetChecklist()">🔄 Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- D-Day Calculator -->
+        <section class="dday-section no-print" aria-label="Deadline calculator">
+            <div class="dday-header">
+                <div class="dday-icon">📅</div>
+                <div>
+                    <div class="dday-title">Deadline Calculator</div>
+                    <div class="dday-subtitle">Calculate your immigration office visit deadline</div>
+                </div>
+            </div>
+
+            <div class="dday-input-group">
+                <label for="startDate">First day at new job:</label>
+                <input type="date" id="startDate" class="dday-input" onchange="calculateDeadline()">
+            </div>
+
+            <div class="dday-result" id="ddayResult"></div>
+        </section>
+
+        <!-- Timeline / Checklist -->
+        <section id="checklist" class="timeline" aria-label="Visa transfer checklist">
+
+            <!-- Step 1 -->
+            <article class="step open" data-step="1">
+                <div class="step-marker">1</div>
+                <div class="step-card">
+                    <div class="step-header" onclick="toggleStep(this.parentElement.parentElement)">
+                        <div class="step-header-left">
+                            <div class="step-number">1</div>
+                            <div>
+                                <div class="step-title">Before Leaving Current Job</div>
+                                <div class="step-meta">Documents from your current employer</div>
+                            </div>
+                        </div>
+                        <div class="step-header-right">
+                            <div class="step-badge" id="step1Badge">0/3</div>
+                            <span class="step-chevron">▼</span>
+                        </div>
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-content-inner">
+                            <div class="step-body">
+                                <div class="responsibility-tag">👤 You + Current Employer</div>
+
+                                <div class="checklist">
+                                    <div class="checklist-item" data-id="s1-1" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Labor Income Withholding Receipt</div>
+                                            <div class="checklist-item-korean">근로소득원천징수영수증</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">Current Employer</span>
+                                                <span class="meta-tag">Previous year: Hometax/Tax office. Current year: Request from school</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s1-2" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Income Certificate</div>
+                                            <div class="checklist-item-korean">소득금액증명원</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">You</span>
+                                                <span class="meta-tag">hometax.go.kr, community center, or district office</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s1-3" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Letter of Release</div>
+                                            <div class="checklist-item-korean">이적동의서</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">Current Employer</span>
+                                                <span class="meta-tag meta-tag--warning">Not required if contract completed. Can substitute with explanation if school closed/unpaid wages</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 2 -->
+            <article class="step" data-step="2">
+                <div class="step-marker">2</div>
+                <div class="step-card">
+                    <div class="step-header" onclick="toggleStep(this.parentElement.parentElement)">
+                        <div class="step-header-left">
+                            <div class="step-number">2</div>
+                            <div>
+                                <div class="step-title">After Starting New Job</div>
+                                <div class="step-meta">Documents from your new employer</div>
+                            </div>
+                        </div>
+                        <div class="step-header-right">
+                            <div class="step-badge" id="step2Badge">0/8</div>
+                            <span class="step-chevron">▼</span>
+                        </div>
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-content-inner">
+                            <div class="step-body">
+                                <div class="responsibility-tag">🏫 New Employer Provides</div>
+
+                                <div class="info-box">
+                                    <div class="info-box-icon">ℹ️</div>
+                                    <div class="info-box-content">
+                                        <strong>Medical Test:</strong> Not required for Immigration, but needed for Education Office registration. Your new school will guide you.
+                                    </div>
+                                </div>
+
+                                <div class="checklist">
+                                    <div class="checklist-item" data-id="s2-1" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Confirmation of Residence/Accommodation</div>
+                                            <div class="checklist-item-korean">거주/숙소제공 확인서</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">New Employer</span>
+                                                <span class="meta-tag meta-tag--page">p.7</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s2-2" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Residential Lease Agreement</div>
+                                            <div class="checklist-item-korean">임대차계약서</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">New Employer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s2-3" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Copy of Accommodation Provider's ID</div>
+                                            <div class="checklist-item-korean">숙소제공자 신분증 사본</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">New Employer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s2-4" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Copy of Academy Operation Registration</div>
+                                            <div class="checklist-item-korean">학원운영등록증 사본</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">New Employer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s2-5" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Copy of Business Registration Certificate</div>
+                                            <div class="checklist-item-korean">사업자등록증 사본</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">New Employer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s2-6" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Current Status of School Form</div>
+                                            <div class="checklist-item-korean">학원현황표</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">New Employer</span>
+                                                <span class="meta-tag meta-tag--page">p.8</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s2-7" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Instructor Utilization Plan Form</div>
+                                            <div class="checklist-item-korean">강사활용계획서</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">New Employer</span>
+                                                <span class="meta-tag meta-tag--page">p.9</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s2-8" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Teaching Schedule</div>
+                                            <div class="checklist-item-korean">강의시간표</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">New Employer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 3 -->
+            <article class="step" data-step="3">
+                <div class="step-marker">3</div>
+                <div class="step-card">
+                    <div class="step-header" onclick="toggleStep(this.parentElement.parentElement)">
+                        <div class="step-header-left">
+                            <div class="step-number">3</div>
+                            <div>
+                                <div class="step-title">Visit Immigration Office</div>
+                                <div class="step-meta">Documents you must bring in person</div>
+                            </div>
+                        </div>
+                        <div class="step-header-right">
+                            <div class="step-badge" id="step3Badge">0/8</div>
+                            <span class="step-chevron">▼</span>
+                        </div>
+                    </div>
+
+                    <div class="step-content">
+                        <div class="step-content-inner">
+                            <div class="step-body">
+                                <div class="responsibility-tag">👤 You Must Visit in Person</div>
+
+                                <div class="checklist">
+                                    <div class="checklist-item" data-id="s3-1" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Passport</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">You</span>
+                                                <span class="meta-tag">Valid passport</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s3-2" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Alien Registration Card (ARC)</div>
+                                            <div class="checklist-item-korean">외국인등록증</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">You</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s3-3" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Employment Contract</div>
+                                            <div class="checklist-item-korean">근로계약서</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">You</span>
+                                                <span class="meta-tag meta-tag--warning">Original + Copy</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s3-4" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Application Form (통합신청서)</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">You</span>
+                                                <span class="meta-tag meta-tag--page">p.3</span>
+                                            </div>
+                                            <div class="checklist-item-meta" style="margin-top: 6px;">
+                                                <span class="meta-tag meta-tag--warning">Check 3: ☑ Change of Workplace ☑ Extension of Stay ☑ Change of Residence</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s3-5" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Foreigner Occupation Report Form</div>
+                                            <div class="checklist-item-korean">외국인 직업 신고서</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">You</span>
+                                                <span class="meta-tag meta-tag--page">p.4-6</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s3-6" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Fee: 60,000 KRW</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag meta-tag--provider">You</span>
+                                                <span class="meta-tag">Cash or card</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s3-7" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Documents from Current School</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag">Tax Receipt, Income Certificate, (Release Letter)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checklist-item" data-id="s3-8" onclick="toggleItem(this)">
+                                        <div class="checkbox" role="checkbox" aria-checked="false" tabindex="0">
+                                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Documents from New School</div>
+                                            <div class="checklist-item-meta">
+                                                <span class="meta-tag">Residence Confirmation, Lease, ID, Registrations, Forms</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Warning Box -->
+        <div class="warning-box">
+            <div class="warning-box-header">
+                <div class="warning-box-icon">⚠️</div>
+                <div class="warning-box-title">Critical Deadline</div>
+            </div>
+            <p style="margin-bottom: 16px; font-weight: 600; color: var(--text);">
+                Must visit Immigration Office within 15 days of starting new job!
+            </p>
+            <ul>
+                <li>Make an appointment as soon as possible (high demand)</li>
+                <li>If unable to book online: walk-in on the 15th day (excluding first working day)</li>
+                <li>Gathering and submitting documents is YOUR responsibility</li>
+            </ul>
+        </div>
+
+        <!-- Education Office Info -->
+        <div class="info-box">
+            <div class="info-box-icon">📋</div>
+            <div class="info-box-content">
+                <strong>For Education Office Registration:</strong><br><br>
+                Your new employer will need:<br>
+                • <strong>Apostilled Degree Certificate</strong><br>
+                • <strong>Apostilled Criminal Background Check</strong><br><br>
+                💡 Don't have copies? Submit other documents at immigration first, then request copies.
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section aria-label="Frequently asked questions">
+            <h2 class="section-title">
+                <div class="section-title-icon">❓</div>
+                Frequently Asked Questions
+            </h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this.parentElement)">
+                        <span>What if I can't get an appointment online?</span>
+                        <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <div class="faq-answer-content">
+                                Walk-in on the 15th day (excluding your first working day). Arrive early as wait times can be long. Some offices start giving numbers before they officially open.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this.parentElement)">
+                        <span>Is a Letter of Release (이적동의서) always required?</span>
+                        <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <div class="faq-answer-content">
+                                No, not required if you complete your full contract term. If your school closed or you have unpaid wages, you can substitute it with an explanation letter.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this.parentElement)">
+                        <span>When should I do the Medical Test?</span>
+                        <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <div class="faq-answer-content">
+                                The medical test is <strong>not</strong> required for Immigration - only for Education Office registration. Your new school will guide you on timing and location. It can be done before or after your immigration visit.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this.parentElement)">
+                        <span>What if I don't have my Apostille documents?</span>
+                        <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <div class="faq-answer-content">
+                                Submit your other documents at immigration first. You can then request copies of your Apostilled documents from the Immigration Office after completing the initial submission.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this.parentElement)">
+                        <span>Who is responsible for preparing documents?</span>
+                        <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <div class="faq-answer-content">
+                                Ultimately, it's <strong>your responsibility</strong>. However, you can (and should) ask your current and new schools for assistance with documents they need to provide.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download-section" aria-label="Download forms">
+            <div class="download-header">
+                <h2 class="section-title" style="margin: 0;">
+                    <div class="section-title-icon">📎</div>
+                    Attached Forms
+                </h2>
+                <a href="https://drive.google.com/file/d/1E_rr6FwgPk28IjuordtG8y7l0s0xtn0k/view?usp=sharing"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="download-btn">
+                    <span>📥</span>
+                    Download All Forms (PDF)
+                </a>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Page</th>
+                            <th>Form Name</th>
+                            <th>Korean</th>
+                            <th>Completed By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>p.3</td>
+                            <td>Application Form</td>
+                            <td>통합신청서</td>
+                            <td>You</td>
+                        </tr>
+                        <tr>
+                            <td>p.4-6</td>
+                            <td>Foreigner Occupation Report</td>
+                            <td>외국인 직업 신고서</td>
+                            <td>You</td>
+                        </tr>
+                        <tr>
+                            <td>p.7</td>
+                            <td>Residence Confirmation</td>
+                            <td>거주/숙소제공 확인서</td>
+                            <td>New Employer</td>
+                        </tr>
+                        <tr>
+                            <td>p.8</td>
+                            <td>School Status Form</td>
+                            <td>어학원 현황표</td>
+                            <td>New Employer</td>
+                        </tr>
+                        <tr>
+                            <td>p.9</td>
+                            <td>Instructor Utilization Plan</td>
+                            <td>강사활용계획서</td>
+                            <td>New Employer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Document Matrix -->
+        <section aria-label="Document responsibility matrix">
+            <h2 class="section-title">
+                <div class="section-title-icon">📋</div>
+                Document Responsibility Matrix
+            </h2>
+
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Document</th>
+                            <th style="text-align: center;">You</th>
+                            <th style="text-align: center;">Current School</th>
+                            <th style="text-align: center;">New School</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Labor Income Withholding Receipt</td>
+                            <td></td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Income Certificate</td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Letter of Release</td>
+                            <td></td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Passport / ARC</td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Employment Contract</td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Application Forms (p.3-6)</td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Fee (60,000 KRW)</td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Residence Confirmation (p.7)</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                        </tr>
+                        <tr>
+                            <td>Lease Agreement</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                        </tr>
+                        <tr>
+                            <td>Provider's ID Copy</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                        </tr>
+                        <tr>
+                            <td>Academy & Business Registrations</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                        </tr>
+                        <tr>
+                            <td>School Forms (p.8-9)</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                        </tr>
+                        <tr>
+                            <td>Teaching Schedule</td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: center;"><span class="matrix-dot">●</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Cost Summary -->
+        <section class="cost-card" aria-label="Cost summary">
+            <h2 class="section-title" style="margin-top: 0;">
+                <div class="section-title-icon">💰</div>
+                Cost Summary
+            </h2>
+
+            <div class="cost-row">
+                <span class="cost-label">Immigration Fee</span>
+                <span class="cost-value">60,000 KRW</span>
+            </div>
+            <div class="cost-row">
+                <span class="cost-label"><strong>Total</strong></span>
+                <span class="cost-value"><strong>60,000 KRW</strong></span>
+            </div>
+        </section>
+
+        <!-- Contact Card -->
+        <section class="contact-card" aria-label="Contact information">
+            <h2>Kang & Kriel Recruitment</h2>
+            <p class="contact-tagline">We champion TEFL teachers' rights through trusted partnerships and tailored services.</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <a href="tel:+8228640509">+82 (0)2 864 0509</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <a href="tel:+821039434340">+82 (0)10 3943 4340</a>
+                </div>
+                <div class="contact-item">
+                    <span>📠</span>
+                    <span>+82 (0)2 6455 0575</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-message">
+                This process is crucial, and while it may seem daunting, remember to ask your school for assistance. Here's to a seamless transition and a fantastic new teaching experience!
+            </p>
+            <p class="footer-meta">
+                <strong>Version 4.0</strong> • Last Updated: December 2025
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // ========================================
+        // STORAGE
+        // ========================================
+        const STORAGE_KEY = 'tefl_visa_guide_v4';
+
+        function saveToStorage(key, value) {
+            try {
+                const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                data[key] = value;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            } catch (e) {
+                console.warn('Storage error:', e);
+            }
+        }
+
+        function getFromStorage(key, defaultValue = null) {
+            try {
+                const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                return data[key] !== undefined ? data[key] : defaultValue;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+
+        // ========================================
+        // THEME
+        // ========================================
+        function toggleTheme() {
+            const isDark = document.body.getAttribute('data-theme') === 'dark';
+            document.body.setAttribute('data-theme', isDark ? '' : 'dark');
+            document.getElementById('themeIcon').textContent = isDark ? '🌙' : '☀️';
+            saveToStorage('theme', isDark ? 'light' : 'dark');
+        }
+
+        function loadTheme() {
+            const theme = getFromStorage('theme') ||
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (theme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                document.getElementById('themeIcon').textContent = '☀️';
+            }
+        }
+
+        // ========================================
+        // STEP ACCORDION
+        // ========================================
+        function toggleStep(step) {
+            step.classList.toggle('open');
+        }
+
+        function expandAllSteps() {
+            document.querySelectorAll('.step').forEach(s => s.classList.add('open'));
+            showToast('All steps expanded');
+        }
+
+        function collapseAllSteps() {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('open'));
+            showToast('All steps collapsed');
+        }
+
+        // ========================================
+        // CHECKLIST
+        // ========================================
+        function toggleItem(item) {
+            const isChecked = item.classList.toggle('checked');
+            const checkbox = item.querySelector('.checkbox');
+            checkbox.setAttribute('aria-checked', isChecked);
+
+            const id = item.getAttribute('data-id');
+            saveItemState(id, isChecked);
+            updateProgress();
+
+            if (isChecked) {
+                showToast('Item completed! ✓', 'success');
+            }
+        }
+
+        function saveItemState(id, isChecked) {
+            const states = getFromStorage('checklist', {});
+            states[id] = isChecked;
+            saveToStorage('checklist', states);
+        }
+
+        function loadChecklist() {
+            const states = getFromStorage('checklist', {});
+            Object.entries(states).forEach(([id, isChecked]) => {
+                if (isChecked) {
+                    const item = document.querySelector(`[data-id="${id}"]`);
+                    if (item) {
+                        item.classList.add('checked');
+                        item.querySelector('.checkbox').setAttribute('aria-checked', 'true');
+                    }
+                }
+            });
+            updateProgress();
+        }
+
+        function resetChecklist() {
+            if (!confirm('Reset all progress? This cannot be undone.')) return;
+
+            document.querySelectorAll('.checklist-item').forEach(item => {
+                item.classList.remove('checked');
+                item.querySelector('.checkbox').setAttribute('aria-checked', 'false');
+            });
+
+            saveToStorage('checklist', {});
+            updateProgress();
+            showToast('Progress reset', 'warning');
+        }
+
+        // ========================================
+        // PROGRESS
+        // ========================================
+        function updateProgress() {
+            const step1Items = document.querySelectorAll('[data-step="1"] .checklist-item');
+            const step2Items = document.querySelectorAll('[data-step="2"] .checklist-item');
+            const step3Items = document.querySelectorAll('[data-step="3"] .checklist-item');
+
+            const step1Complete = document.querySelectorAll('[data-step="1"] .checklist-item.checked').length;
+            const step2Complete = document.querySelectorAll('[data-step="2"] .checklist-item.checked').length;
+            const step3Complete = document.querySelectorAll('[data-step="3"] .checklist-item.checked').length;
+
+            const total = step1Items.length + step2Items.length + step3Items.length;
+            const completed = step1Complete + step2Complete + step3Complete;
+            const percentage = Math.round((completed / total) * 100);
+
+            // Update progress bar
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('progressPercent').textContent = percentage + '%';
+
+            // Update step counts
+            document.getElementById('step1Count').textContent = `${step1Complete}/${step1Items.length}`;
+            document.getElementById('step2Count').textContent = `${step2Complete}/${step2Items.length}`;
+            document.getElementById('step3Count').textContent = `${step3Complete}/${step3Items.length}`;
+
+            // Update badges
+            document.getElementById('step1Badge').textContent = `${step1Complete}/${step1Items.length}`;
+            document.getElementById('step2Badge').textContent = `${step2Complete}/${step2Items.length}`;
+            document.getElementById('step3Badge').textContent = `${step3Complete}/${step3Items.length}`;
+
+            // Update step completion status
+            document.querySelectorAll('.progress-step').forEach(step => {
+                const stepNum = step.getAttribute('data-step');
+                let isComplete = false;
+                if (stepNum === '1') isComplete = step1Complete === step1Items.length;
+                if (stepNum === '2') isComplete = step2Complete === step2Items.length;
+                if (stepNum === '3') isComplete = step3Complete === step3Items.length;
+                step.classList.toggle('complete', isComplete);
+            });
+
+            // Update step cards
+            document.querySelectorAll('.step').forEach(step => {
+                const stepNum = step.getAttribute('data-step');
+                let isComplete = false;
+                if (stepNum === '1') isComplete = step1Complete === step1Items.length;
+                if (stepNum === '2') isComplete = step2Complete === step2Items.length;
+                if (stepNum === '3') isComplete = step3Complete === step3Items.length;
+                step.classList.toggle('complete', isComplete);
+            });
+
+            // Update hero total
+            document.getElementById('totalDocsHero').textContent = total;
+        }
+
+        // ========================================
+        // D-DAY CALCULATOR
+        // ========================================
+        function calculateDeadline() {
+            const input = document.getElementById('startDate');
+            const result = document.getElementById('ddayResult');
+
+            if (!input.value) {
+                result.classList.remove('show');
+                return;
+            }
+
+            const start = new Date(input.value + 'T00:00:00');
+            const deadline = new Date(start);
+            deadline.setDate(deadline.getDate() + 15);
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            const daysLeft = Math.ceil((deadline - today) / (1000 * 60 * 60 * 24));
+            const deadlineStr = deadline.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            let html = '';
+            let cls = 'safe';
+
+            if (daysLeft < 0) {
+                html = `<div class="dday-countdown" style="color: var(--danger);">OVERDUE</div>
+                        <div class="dday-date">Deadline was ${deadlineStr}</div>`;
+                cls = 'urgent';
+            } else if (daysLeft === 0) {
+                html = `<div class="dday-countdown" style="color: var(--danger);">TODAY!</div>
+                        <div class="dday-date">${deadlineStr}</div>`;
+                cls = 'urgent';
+            } else if (daysLeft <= 3) {
+                html = `<div class="dday-countdown" style="color: var(--danger);">${daysLeft} DAYS LEFT</div>
+                        <div class="dday-date">${deadlineStr}</div>`;
+                cls = 'urgent';
+            } else if (daysLeft <= 7) {
+                html = `<div class="dday-countdown" style="color: var(--warning);">${daysLeft} DAYS LEFT</div>
+                        <div class="dday-date">${deadlineStr}</div>`;
+                cls = 'warning';
+            } else {
+                html = `<div class="dday-countdown" style="color: var(--success);">${daysLeft} DAYS LEFT</div>
+                        <div class="dday-date">${deadlineStr}</div>`;
+                cls = 'safe';
+            }
+
+            result.innerHTML = html;
+            result.className = `dday-result show ${cls}`;
+            saveToStorage('startDate', input.value);
+        }
+
+        function loadStartDate() {
+            const saved = getFromStorage('startDate');
+            if (saved) {
+                document.getElementById('startDate').value = saved;
+                calculateDeadline();
+            }
+        }
+
+        // ========================================
+        // FAQ
+        // ========================================
+        function toggleFaq(item) {
+            const wasOpen = item.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+
+            // Toggle clicked
+            if (!wasOpen) {
+                item.classList.add('open');
+            }
+        }
+
+        // ========================================
+        // STICKY PROGRESS
+        // ========================================
+        function handleScroll() {
+            const wrapper = document.getElementById('progressWrapper');
+            if (!wrapper) return;
+
+            if (window.scrollY > 100) {
+                wrapper.classList.add('scrolled');
+            } else {
+                wrapper.classList.remove('scrolled');
+            }
+        }
+
+        // ========================================
+        // TOAST NOTIFICATIONS
+        // ========================================
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = `toast toast--${type}`;
+            toast.textContent = message;
+            container.appendChild(toast);
+
+            requestAnimationFrame(() => {
+                toast.classList.add('show');
+            });
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // ========================================
+        // PDF DOWNLOAD
+        // ========================================
+        function downloadPDF() {
+            expandAllSteps();
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.add('open'));
+
+            setTimeout(() => {
+                window.print();
+            }, 300);
+        }
+
+        // ========================================
+        // KEYBOARD NAVIGATION
+        // ========================================
+        document.addEventListener('keydown', (e) => {
+            if (e.target.classList.contains('checkbox')) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    e.target.closest('.checklist-item').click();
+                }
+            }
+        });
+
+        // ========================================
+        // INIT
+        // ========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTheme();
+            loadChecklist();
+            loadStartDate();
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+        });
+    </script>
+</body>
+</html>

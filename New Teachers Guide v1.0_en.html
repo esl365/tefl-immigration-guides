@@ -1,0 +1,2384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>New Teachers in South Korea Guide v1.0</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           CSS VARIABLES - DESIGN TOKENS
+           ======================================== */
+        :root {
+            /* Primary Colors - Indigo */
+            --primary-50: #eef2ff;
+            --primary-100: #e0e7ff;
+            --primary-200: #c7d2fe;
+            --primary-300: #a5b4fc;
+            --primary-400: #818cf8;
+            --primary-500: #6366f1;
+            --primary-600: #4f46e5;
+            --primary-700: #4338ca;
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+
+            /* Accent Colors - Amber */
+            --accent-400: #fbbf24;
+            --accent-500: #f59e0b;
+            --accent-600: #d97706;
+            --accent: #f59e0b;
+
+            /* Semantic Colors */
+            --success-50: #ecfdf5;
+            --success-100: #d1fae5;
+            --success-400: #34d399;
+            --success-500: #10b981;
+            --success-600: #059669;
+            --success: #10b981;
+
+            --warning-50: #fffbeb;
+            --warning-400: #fbbf24;
+            --warning-500: #f59e0b;
+            --warning: #f59e0b;
+
+            --danger-50: #fef2f2;
+            --danger-400: #f87171;
+            --danger-500: #ef4444;
+            --danger-600: #dc2626;
+            --danger: #ef4444;
+
+            /* Neutral Colors */
+            --gray-50: #fafafa;
+            --gray-100: #f4f4f5;
+            --gray-200: #e4e4e7;
+            --gray-300: #d4d4d8;
+            --gray-400: #a1a1aa;
+            --gray-500: #71717a;
+            --gray-600: #52525b;
+            --gray-700: #3f3f46;
+            --gray-800: #27272a;
+            --gray-900: #18181b;
+            --gray-950: #09090b;
+
+            /* Light Theme */
+            --bg: #fafafa;
+            --bg-elevated: #ffffff;
+            --bg-card: #ffffff;
+            --bg-hover: #f4f4f5;
+            --text: #18181b;
+            --text-secondary: #3f3f46;
+            --text-muted: #71717a;
+            --border: #e4e4e7;
+            --border-light: #f4f4f5;
+
+            /* Shadows */
+            --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+            --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.15);
+            --shadow-glow-success: 0 0 40px rgba(16, 185, 129, 0.2);
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-2xl: 32px;
+            --radius-full: 9999px;
+
+            /* Transitions */
+            --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+            /* Z-Index Scale */
+            --z-dropdown: 100;
+            --z-sticky: 200;
+            --z-modal: 300;
+            --z-toast: 400;
+            --z-tooltip: 500;
+
+            /* Focus Ring */
+            --focus-ring: 0 0 0 3px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Dark Theme */
+        [data-theme="dark"] {
+            --bg: #09090b;
+            --bg-elevated: #18181b;
+            --bg-card: #18181b;
+            --bg-hover: #27272a;
+            --text: #fafafa;
+            --text-secondary: #d4d4d8;
+            --text-muted: #a1a1aa;
+            --border: #27272a;
+            --border-light: #3f3f46;
+
+            --shadow-xs: 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -1px rgba(0,0,0,0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -2px rgba(0,0,0,0.3);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.5), 0 10px 10px -5px rgba(0,0,0,0.3);
+            --shadow-glow: 0 0 60px rgba(99, 102, 241, 0.3);
+        }
+
+        /* ========================================
+           BASE STYLES
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 16px;
+            min-height: 100vh;
+            min-height: 100dvh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 10000;
+            transition: top 0.3s var(--ease-out);
+        }
+
+        .skip-link:focus {
+            top: 20px;
+        }
+
+        :focus-visible {
+            outline: none;
+            box-shadow: var(--focus-ring);
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========================================
+           DOWNLOAD BUTTON
+           ======================================== */
+        .download-forms-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: var(--shadow-md), 0 0 20px rgba(229, 62, 62, 0.3);
+            transition: all 0.3s var(--ease-out);
+            animation: pulse-glow 2s infinite;
+            margin-left: 16px;
+        }
+
+        .download-forms-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(229, 62, 62, 0.5);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: var(--shadow-md), 0 0 20px rgba(229, 62, 62, 0.3);
+            }
+            50% {
+                box-shadow: var(--shadow-lg), 0 0 30px rgba(229, 62, 62, 0.5);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .download-forms-btn {
+                margin-left: 0;
+                margin-top: 12px;
+                display: flex;
+                width: fit-content;
+            }
+
+            .info-card-header-with-download {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* ========================================
+           FLOATING ACTIONS
+           ======================================== */
+        .floating-actions {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: var(--z-sticky);
+            display: flex;
+            gap: 12px;
+        }
+
+        .fab {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            border: none;
+            background: var(--bg-card);
+            color: var(--text);
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s var(--ease-out);
+            backdrop-filter: blur(10px);
+        }
+
+        .fab:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .fab:active {
+            transform: scale(0.95);
+        }
+
+        /* Bottom Actions */
+        .bottom-actions {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: var(--z-sticky);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .action-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 24px;
+            border-radius: var(--radius-full);
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .action-pill--primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .action-pill--primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(99, 102, 241, 0.4);
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            position: relative;
+            padding: 60px 20px 80px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.3), transparent),
+                radial-gradient(ellipse 60% 50% at 80% 50%, rgba(168, 85, 247, 0.2), transparent),
+                radial-gradient(ellipse 50% 40% at 20% 80%, rgba(59, 130, 246, 0.2), transparent),
+                linear-gradient(180deg, var(--primary-600) 0%, var(--primary-700) 100%);
+            z-index: -2;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Quick Stats */
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: var(--radius-lg);
+            padding: 20px 16px;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .stat-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-4px);
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* CTA Button */
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--primary);
+            padding: 16px 32px;
+            border-radius: var(--radius-full);
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s var(--ease-spring);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-xl), 0 0 40px rgba(255,255,255,0.3);
+        }
+
+        .hero-cta .arrow {
+            transition: transform 0.3s var(--ease-out);
+        }
+
+        .hero-cta:hover .arrow {
+            transform: translateY(3px);
+        }
+
+        /* ========================================
+           PROGRESS TRACKER - STICKY
+           ======================================== */
+        .progress-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: var(--z-sticky);
+            background: var(--bg);
+            padding: 16px 0;
+            margin-bottom: 20px;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .progress-wrapper.scrolled {
+            background: var(--bg-elevated);
+            box-shadow: var(--shadow-md);
+            padding: 12px 0;
+        }
+
+        .progress-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 20px 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+
+        .progress-wrapper.scrolled .progress-card {
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .progress-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .progress-title-icon {
+            font-size: 1.25rem;
+        }
+
+        .progress-percentage {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        .progress-bar-container {
+            position: relative;
+            height: 12px;
+            background: var(--gray-200);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+
+        [data-theme="dark"] .progress-bar-container {
+            background: var(--gray-800);
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: var(--radius-full);
+            background: linear-gradient(90deg, var(--success) 0%, var(--success-400) 100%);
+            transition: width 0.6s var(--ease-out);
+            position: relative;
+        }
+
+        .progress-bar-fill::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .progress-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            background: var(--bg-hover);
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            transition: all 0.2s var(--ease-out);
+        }
+
+        .progress-step.complete {
+            background: var(--success-50);
+            color: var(--success-600);
+        }
+
+        [data-theme="dark"] .progress-step.complete {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success-400);
+        }
+
+        .progress-step-indicator {
+            width: 24px;
+            height: 24px;
+            border-radius: var(--radius-full);
+            background: var(--gray-300);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--gray-600);
+            flex-shrink: 0;
+        }
+
+        .progress-step.complete .progress-step-indicator {
+            background: var(--success);
+            color: white;
+        }
+
+        .progress-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s var(--ease-out);
+        }
+
+        .btn--ghost {
+            background: transparent;
+            color: var(--text-muted);
+        }
+
+        .btn--ghost:hover {
+            background: var(--bg-hover);
+            color: var(--text);
+        }
+
+        .btn--danger {
+            background: var(--danger-50);
+            color: var(--danger);
+        }
+
+        .btn--danger:hover {
+            background: var(--danger);
+            color: white;
+        }
+
+        [data-theme="dark"] .btn--danger {
+            background: rgba(239, 68, 68, 0.15);
+        }
+
+        /* ========================================
+           TIMELINE STEPS
+           ======================================== */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .step {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .step-marker {
+            position: absolute;
+            left: -40px;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--bg-card);
+            border: 3px solid var(--border);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 1;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .step.active .step-marker,
+        .step.complete .step-marker {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .step.complete .step-marker {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .step-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .step-header {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-card);
+            transition: background 0.2s var(--ease-out);
+            user-select: none;
+        }
+
+        .step-header:hover {
+            background: var(--bg-hover);
+        }
+
+        .step-header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-100);
+            color: var(--primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        [data-theme="dark"] .step-number {
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        .step.complete .step-number {
+            background: var(--success-100);
+            color: var(--success);
+        }
+
+        [data-theme="dark"] .step.complete .step-number {
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+
+        .step-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .step-header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: var(--bg-hover);
+            color: var(--text-muted);
+        }
+
+        .step.complete .step-badge {
+            background: var(--success-100);
+            color: var(--success);
+        }
+
+        [data-theme="dark"] .step.complete .step-badge {
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .step-chevron {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            transition: transform 0.3s var(--ease-out);
+        }
+
+        .step.open .step-chevron {
+            transform: rotate(180deg);
+        }
+
+        .step-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s var(--ease-out);
+        }
+
+        .step.open .step-content {
+            grid-template-rows: 1fr;
+        }
+
+        .step-content-inner {
+            overflow: hidden;
+        }
+
+        .step-body {
+            padding: 0 24px 24px;
+        }
+
+        .responsibility-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--primary-50);
+            color: var(--primary);
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .responsibility-tag.school {
+            background: var(--accent-400);
+            color: var(--gray-900);
+        }
+
+        [data-theme="dark"] .responsibility-tag {
+            background: rgba(99, 102, 241, 0.15);
+        }
+
+        [data-theme="dark"] .responsibility-tag.school {
+            background: rgba(251, 191, 36, 0.3);
+            color: var(--accent-400);
+        }
+
+        /* ========================================
+           CHECKLIST ITEMS
+           ======================================== */
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 20px;
+            background: var(--bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            transition: all 0.2s var(--ease-out);
+            cursor: pointer;
+        }
+
+        .checklist-item:hover {
+            border-color: var(--primary-300);
+            background: var(--bg-hover);
+        }
+
+        .checklist-item.checked {
+            background: var(--success-50);
+            border-color: var(--success-400);
+        }
+
+        [data-theme="dark"] .checklist-item.checked {
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .checklist-item.checked .checklist-item-title {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        /* Custom Checkbox */
+        .checkbox {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .checkbox input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .checkbox-visual {
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s var(--ease-out);
+            background: var(--bg-card);
+        }
+
+        .checkbox input:checked + .checkbox-visual {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .checkbox-visual svg {
+            width: 16px;
+            height: 16px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.2s var(--ease-spring);
+        }
+
+        .checkbox input:checked + .checkbox-visual svg {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .checklist-item-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .checklist-item-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+            transition: all 0.2s var(--ease-out);
+        }
+
+        .checklist-item-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .checklist-item-korean {
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* ========================================
+           INFO CARDS
+           ======================================== */
+        .info-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+
+        .info-card--warning {
+            border-color: var(--warning);
+            background: var(--warning-50);
+        }
+
+        [data-theme="dark"] .info-card--warning {
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+        .info-card--tip {
+            border-color: var(--primary);
+            background: var(--primary-50);
+        }
+
+        [data-theme="dark"] .info-card--tip {
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .info-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .info-card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .info-card--warning .info-card-icon {
+            background: var(--warning);
+        }
+
+        .info-card--tip .info-card-icon {
+            background: var(--primary);
+        }
+
+        .info-card-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .info-card ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .info-card li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .info-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 16px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        /* ========================================
+           HOSPITAL LIST TABLE
+           ======================================== */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--bg-hover);
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        td {
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: var(--bg-hover);
+        }
+
+        /* ========================================
+           COST BADGES
+           ======================================== */
+        .cost-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            background: var(--accent-400);
+            color: var(--gray-900);
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* ========================================
+           TOAST NOTIFICATIONS
+           ======================================== */
+        .toast-container {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            z-index: var(--z-toast);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border);
+            animation: slideInRight 0.3s var(--ease-out);
+            max-width: 320px;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .toast-icon {
+            font-size: 1.25rem;
+        }
+
+        .toast-content {
+            flex: 1;
+        }
+
+        .toast-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .toast-message {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========================================
+           MOBILE RESPONSIVE
+           ======================================== */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 16px 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .quick-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .stat-card {
+                padding: 16px 12px;
+            }
+
+            .stat-value {
+                font-size: 1.25rem;
+            }
+
+            /* Mobile: Compact sticky progress */
+            .progress-wrapper {
+                padding: 8px 0;
+                margin-bottom: 12px;
+            }
+
+            .progress-wrapper.scrolled {
+                padding: 6px 0;
+            }
+
+            .progress-card {
+                padding: 12px 16px;
+                border-radius: var(--radius-lg);
+            }
+
+            /* Hide detailed steps and actions when scrolled on mobile */
+            .progress-wrapper.scrolled .progress-steps,
+            .progress-wrapper.scrolled .progress-actions {
+                display: none;
+            }
+
+            .progress-wrapper.scrolled .progress-header {
+                margin-bottom: 8px;
+            }
+
+            .progress-wrapper.scrolled .progress-card {
+                padding: 10px 16px;
+            }
+
+            /* Mini progress bar only when scrolled */
+            .progress-wrapper.scrolled .progress-bar-container {
+                height: 6px;
+            }
+
+            .progress-steps {
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+                margin-top: 10px;
+            }
+
+            .progress-step {
+                padding: 8px 10px;
+                font-size: 0.8rem;
+            }
+
+            .progress-step-indicator {
+                width: 20px;
+                height: 20px;
+                font-size: 0.7rem;
+            }
+
+            .progress-actions {
+                margin-top: 10px;
+                gap: 6px;
+            }
+
+            .progress-actions .btn {
+                padding: 8px 12px;
+                font-size: 0.75rem;
+            }
+
+            .timeline {
+                padding-left: 30px;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .step-marker {
+                left: -30px;
+                width: 24px;
+                height: 24px;
+                font-size: 0.75rem;
+            }
+
+            .step-header {
+                padding: 16px;
+                flex-wrap: wrap;
+            }
+
+            .step-header-left {
+                gap: 12px;
+            }
+
+            .step-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
+
+            .step-title {
+                font-size: 1rem;
+            }
+
+            .step-header-right {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 12px;
+            }
+
+            .step-body {
+                padding: 0 16px 16px;
+            }
+
+            .checklist-item {
+                padding: 14px 16px;
+                gap: 12px;
+            }
+
+            .checkbox {
+                width: 24px;
+                height: 24px;
+            }
+
+            .floating-actions {
+                top: 12px;
+                right: 12px;
+                gap: 8px;
+            }
+
+            .fab {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .bottom-actions {
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .action-pill {
+                padding: 12px 18px;
+                font-size: 0.85rem;
+            }
+
+            .toast-container {
+                left: 16px;
+                right: 16px;
+                bottom: 80px;
+            }
+
+            .toast {
+                max-width: none;
+            }
+
+            /* Mobile table as cards */
+            .table-wrapper {
+                border: none;
+            }
+
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 16px;
+                background: var(--bg-card);
+                border-radius: var(--radius-lg);
+                border: 1px solid var(--border);
+                padding: 16px;
+            }
+
+            td {
+                padding: 8px 0;
+                border: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            td::before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: var(--text);
+                margin-right: 16px;
+            }
+
+            tr:hover td {
+                background: transparent;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quick-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .progress-percentage {
+                font-size: 1.5rem;
+            }
+
+            .progress-title {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ========================================
+           PRINT STYLES
+           ======================================== */
+        @media print {
+            .floating-actions,
+            .bottom-actions,
+            .toast-container,
+            .progress-actions,
+            .fab {
+                display: none !important;
+            }
+
+            .hero {
+                background: #6366f1 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .step {
+                break-inside: avoid;
+            }
+
+            .step-content {
+                grid-template-rows: 1fr !important;
+            }
+
+            .checklist-item.checked {
+                background: #ecfdf5 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                font-size: 12pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions">
+        <button class="fab" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <span class="theme-icon">🌙</span>
+        </button>
+    </div>
+
+    <!-- Bottom Actions -->
+    <div class="bottom-actions">
+        <button class="action-pill action-pill--primary" onclick="window.print()" aria-label="Print guide">
+            <span>🖨️</span>
+            <span>Print / PDF</span>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>🇰🇷</span>
+                <span>Welcome to Korea!</span>
+            </div>
+            <h1>New Teachers Guide<br>in South Korea</h1>
+            <p class="hero-subtitle">Your complete checklist for ARC application, health check, and education office requirements</p>
+
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <span class="stat-value">4</span>
+                    <span class="stat-label">Main Steps</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">3-5</span>
+                    <span class="stat-label">Weeks for ARC</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">~39K</span>
+                    <span class="stat-label">KRW Fee</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">100K</span>
+                    <span class="stat-label">Health Check</span>
+                </div>
+            </div>
+
+            <a href="#main-content" class="hero-cta">
+                <span>Get Started</span>
+                <span class="arrow">↓</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="container">
+        <!-- Progress Tracker -->
+        <div class="progress-wrapper" id="progressWrapper">
+            <div class="progress-card">
+                <div class="progress-header">
+                    <div class="progress-title">
+                        <span class="progress-title-icon">📋</span>
+                        <span>Your Progress</span>
+                    </div>
+                    <div class="progress-percentage" id="progressPercent">0%</div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+                </div>
+                <div class="progress-steps">
+                    <div class="progress-step" data-step="1">
+                        <div class="progress-step-indicator">1</div>
+                        <span>Health Check</span>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="progress-step-indicator">2</div>
+                        <span>ARC Docs</span>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="progress-step-indicator">3</div>
+                        <span>Immigration</span>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="progress-step-indicator">4</div>
+                        <span>Education Office</span>
+                    </div>
+                </div>
+                <div class="progress-actions">
+                    <button class="btn btn--ghost" onclick="expandAll()">
+                        <span>📂</span> Expand All
+                    </button>
+                    <button class="btn btn--ghost" onclick="collapseAll()">
+                        <span>📁</span> Collapse All
+                    </button>
+                    <button class="btn btn--danger" onclick="resetProgress()">
+                        <span>🔄</span> Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Important Notice -->
+        <div class="info-card info-card--warning">
+            <div class="info-card-header">
+                <div class="info-card-icon">⚠️</div>
+                <div class="info-card-title">Before Applying for ARC</div>
+            </div>
+            <p>You must complete a medical health check FIRST. This costs around <strong>100,000 KRW</strong> and includes tests for TBPE and various drugs including marijuana.</p>
+            <p style="margin-top: 12px;"><strong>Note:</strong> HIV tests should not be mandated.</p>
+        </div>
+
+        <!-- Timeline Steps -->
+        <div class="timeline" role="list">
+            <!-- Step 1: Health Check -->
+            <article class="step open" data-step="1" role="listitem">
+                <div class="step-marker">1</div>
+                <div class="step-card">
+                    <div class="step-header" onclick="toggleStep(this.parentElement.parentElement)" role="button" aria-expanded="true">
+                        <div class="step-header-left">
+                            <div class="step-number">1</div>
+                            <div>
+                                <div class="step-title">Health Check</div>
+                                <div class="step-meta">Medical examination required before ARC</div>
+                            </div>
+                        </div>
+                        <div class="step-header-right">
+                            <div class="step-badge">
+                                <span class="badge-count">0</span>/<span class="badge-total">4</span>
+                            </div>
+                            <span class="step-chevron">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-content-inner">
+                            <div class="step-body">
+                                <div class="responsibility-tag">
+                                    <span>👤</span>
+                                    <span>Your Responsibility</span>
+                                </div>
+
+                                <div class="info-card info-card--tip" style="margin-bottom: 20px;">
+                                    <div class="info-card-header">
+                                        <div class="info-card-icon">💡</div>
+                                        <div class="info-card-title">What to Tell the Hospital</div>
+                                    </div>
+                                    <p>Request: <strong>"E-2 회화지도 자격자용 신체검사결과서"</strong></p>
+                                    <p style="margin-top: 8px;">Typically requires an 8-hour fast before the test.</p>
+                                    <p style="margin-top: 8px;"><a href="https://www.hikorea.go.kr/board/BoardNtcDetailR.pt?BBS_SEQ=1&BBS_GB_CD=BS10&NTCCTT_SEQ=365&page=1" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">Find MOJ-designated hospitals near you ↗</a></p>
+                                </div>
+
+                                <div class="checklist" data-step="1">
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="health-1">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Two passport photos</div>
+                                            <div class="checklist-item-desc">Standard passport size photos</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="health-2">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Valid passport</div>
+                                            <div class="checklist-item-desc">Original passport required</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="health-3">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Testing fee</div>
+                                            <div class="checklist-item-desc">60,000 ~ 150,000 KRW (additional copies: 1,000 ~ 5,000 KRW)</div>
+                                            <span class="cost-badge">💰 60K-150K KRW</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="health-4">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Fast for 8 hours</div>
+                                            <div class="checklist-item-desc">No food before the test (water usually OK)</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 2: ARC Documents -->
+            <article class="step" data-step="2" role="listitem">
+                <div class="step-marker">2</div>
+                <div class="step-card">
+                    <div class="step-header" onclick="toggleStep(this.parentElement.parentElement)" role="button" aria-expanded="false">
+                        <div class="step-header-left">
+                            <div class="step-number">2</div>
+                            <div>
+                                <div class="step-title">Prepare ARC Documents</div>
+                                <div class="step-meta">Documents needed for immigration</div>
+                            </div>
+                        </div>
+                        <div class="step-header-right">
+                            <div class="step-badge">
+                                <span class="badge-count">0</span>/<span class="badge-total">9</span>
+                            </div>
+                            <span class="step-chevron">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-content-inner">
+                            <div class="step-body">
+                                <div class="responsibility-tag">
+                                    <span>👤</span>
+                                    <span>Your Responsibility</span>
+                                </div>
+
+                                <div class="checklist" data-step="2">
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="arc-1">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Application Form</div>
+                                            <div class="checklist-item-korean">통합신청서</div>
+                                            <div class="checklist-item-desc">Attached form - fill out completely</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="arc-2">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Passport photo (35mm × 45mm)</div>
+                                            <div class="checklist-item-desc">One photo, taken within last 6 months</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="arc-3">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Original passport + photocopy</div>
+                                            <div class="checklist-item-korean">여권 원본 / 사본</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="arc-4">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Sealed Medical Test Result</div>
+                                            <div class="checklist-item-desc">From Step 1 - must be sealed envelope</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="arc-5">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">School's Business Certificate (copy)</div>
+                                            <div class="checklist-item-korean">사업자등록증 / 고유번호증</div>
+                                            <div class="checklist-item-desc">Request from your school</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="arc-6">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Housing Contract (copy)</div>
+                                            <div class="checklist-item-korean">숙소계약서 사본</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="arc-7">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Accommodation Confirmation Letter</div>
+                                            <div class="checklist-item-korean">거주/숙소제공 확인서</div>
+                                            <div class="checklist-item-desc">Attached form - landlord or employer fills out</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="arc-8">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Accommodation Provider's ID (copy)</div>
+                                            <div class="checklist-item-korean">거주숙소제공자의 신분증 사본</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="arc-9">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Employment Contract</div>
+                                            <div class="checklist-item-korean">고용계약서</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 3: Visit Immigration -->
+            <article class="step" data-step="3" role="listitem">
+                <div class="step-marker">3</div>
+                <div class="step-card">
+                    <div class="step-header" onclick="toggleStep(this.parentElement.parentElement)" role="button" aria-expanded="false">
+                        <div class="step-header-left">
+                            <div class="step-number">3</div>
+                            <div>
+                                <div class="step-title">Visit Immigration Office</div>
+                                <div class="step-meta">Submit documents and pay fees</div>
+                            </div>
+                        </div>
+                        <div class="step-header-right">
+                            <div class="step-badge">
+                                <span class="badge-count">0</span>/<span class="badge-total">5</span>
+                            </div>
+                            <span class="step-chevron">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-content-inner">
+                            <div class="step-body">
+                                <div class="responsibility-tag">
+                                    <span>👤</span>
+                                    <span>Your Responsibility</span>
+                                </div>
+
+                                <div class="info-card info-card--tip" style="margin-bottom: 20px;">
+                                    <div class="info-card-header">
+                                        <div class="info-card-icon">💡</div>
+                                        <div class="info-card-title">Pro Tips</div>
+                                    </div>
+                                    <ul>
+                                        <li>No reservation needed for ARC applications (as of 2023)</li>
+                                        <li>For Seoul, Suwon, Incheon: Many walk-in visitors arrive before 9am and queue. <strong>The earlier you arrive, the shorter your wait time</strong></li>
+                                        <li>Coordinate with your school for timing</li>
+                                        <li>Bring cash only - cards not accepted</li>
+                                    </ul>
+                                </div>
+
+                                <div class="checklist" data-step="3">
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="immi-1">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Submit all documents</div>
+                                            <div class="checklist-item-desc">All documents from Step 2</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="immi-2">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Pay Application Fee</div>
+                                            <div class="checklist-item-desc">35,000 KRW (Cash Only)</div>
+                                            <span class="cost-badge">💰 35,000 KRW</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="immi-3">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Pay Shipping Fee</div>
+                                            <div class="checklist-item-desc">4,000 KRW to have ARC mailed to you</div>
+                                            <span class="cost-badge">💰 4,000 KRW</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="immi-4">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Request document copies (Important!)</div>
+                                            <div class="checklist-item-korean">정보공개청구</div>
+                                            <div class="checklist-item-desc">Request stamped copies of your DIRCO-Apostilled SAQA verification and police clearance. Ask officer for "Information Disclosure" room.</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="immi-5">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">ARC Delivered</div>
+                                            <div class="checklist-item-desc">Wait 3-5 weeks for delivery</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 4: Education Office -->
+            <article class="step" data-step="4" role="listitem">
+                <div class="step-marker">4</div>
+                <div class="step-card">
+                    <div class="step-header" onclick="toggleStep(this.parentElement.parentElement)" role="button" aria-expanded="false">
+                        <div class="step-header-left">
+                            <div class="step-number">4</div>
+                            <div>
+                                <div class="step-title">Education Office & Criminal Record</div>
+                                <div class="step-meta">Final registration requirements</div>
+                            </div>
+                        </div>
+                        <div class="step-header-right">
+                            <div class="step-badge">
+                                <span class="badge-count">0</span>/<span class="badge-total">5</span>
+                            </div>
+                            <span class="step-chevron">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-content-inner">
+                            <div class="step-body">
+                                <div class="responsibility-tag school">
+                                    <span>🏫</span>
+                                    <span>School Usually Handles This</span>
+                                </div>
+
+                                <div class="info-card info-card--tip" style="margin-bottom: 20px;">
+                                    <div class="info-card-header">
+                                        <div class="info-card-icon">📅</div>
+                                        <div class="info-card-title">Registration Deadline</div>
+                                    </div>
+                                    <ul style="margin: 0; padding-left: 20px;">
+                                        <li>Education Office registration required within <strong>10-15 days of starting work</strong> (varies by region)</li>
+                                        <li>Your ARC is needed, so <strong>apply for ARC promptly after arrival</strong></li>
+                                        <li>If delayed, your employer can explain the situation to the Education Office</li>
+                                    </ul>
+                                </div>
+
+                                <div class="info-card info-card--warning" style="margin-bottom: 20px;">
+                                    <div class="info-card-header">
+                                        <div class="info-card-icon">⚠️</div>
+                                        <div class="info-card-title">Requirements Vary</div>
+                                    </div>
+                                    <p>Different Education Offices have different requirements. Your employer should confirm with their local Education Office representative.</p>
+                                </div>
+
+                                <h4 style="margin-bottom: 16px; color: var(--text);">Documents for Employment Notification:</h4>
+                                <div class="checklist" data-step="4">
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="edu-1">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Employment Notification Form</div>
+                                            <div class="checklist-item-korean">채용통보서</div>
+                                            <div class="checklist-item-desc">Form provided by Education Office (employer handles)</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="edu-2">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Criminal Record Check (Sex Crimes & Child Abuse)</div>
+                                            <div class="checklist-item-korean">성범죄경력 및 아동학대범죄전력 조회회신서</div>
+                                            <div class="checklist-item-desc">From police station, valid for 15 days only</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="edu-3">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Passport Copy & ARC Copy (Front & Back)</div>
+                                            <div class="checklist-item-korean">여권 사본 및 외국인등록증 사본 (앞, 뒤)</div>
+                                            <div class="checklist-item-desc">Can substitute ARC with Proof of Alien Registration from Immigration</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="edu-4">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Health Certificate</div>
+                                            <div class="checklist-item-korean">건강진단서</div>
+                                            <div class="checklist-item-desc">MOJ-designated hospital, issued within 1 month, includes TBPE (drug) test</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="edu-5">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">Academy Registration Certificate (Copy)</div>
+                                            <div class="checklist-item-korean">학원설립운영등록증 사본</div>
+                                            <div class="checklist-item-desc">For verification of academy information (employer provides)</div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="info-card info-card--tip" style="margin-top: 24px;">
+                                    <div class="info-card-header">
+                                        <div class="info-card-icon">🚔</div>
+                                        <div class="info-card-title">Criminal Record Check (Sex Crimes & Child Abuse)</div>
+                                    </div>
+                                    <p>Visit the public service center at your nearest police station. <strong>The certificate is only valid for 15 days.</strong></p>
+                                    <h5 style="margin: 16px 0 8px; color: var(--text);">If you go personally:</h5>
+                                    <ul>
+                                        <li>Application form (성범죄경력 및 아동학대범죄전력 조회 요청서)</li>
+                                        <li>Academy Registration Certificate (학원설립운영등록증)</li>
+                                        <li>Your ARC</li>
+                                    </ul>
+                                    <h5 style="margin: 16px 0 8px; color: var(--text);">If school staff goes for you:</h5>
+                                    <ul>
+                                        <li>Application form (성범죄경력 및 아동학대범죄전력 조회 요청서)</li>
+                                        <li>Delegation form (위임장 및 동의서) - you must handwrite and sign</li>
+                                        <li>Your ARC or Proof of Alien Registration</li>
+                                        <li>Staff's employment certificate (재직증명서) - valid 10 days</li>
+                                        <li>Staff's ID</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Forms Reference -->
+        <section class="info-card" style="margin-top: 40px;">
+            <div class="info-card-header info-card-header-with-download">
+                <div class="info-card-icon" style="background: var(--primary);">📎</div>
+                <div class="info-card-title">Attached Forms Reference</div>
+                <a href="https://drive.google.com/file/d/13rYKhY3qchu2PS7oGqetz6WPrv3OMEX0/view?usp=sharing"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="download-forms-btn">
+                    <span>📥</span>
+                    <span>Download All Forms (PDF)</span>
+                </a>
+            </div>
+            <ul>
+                <li><strong>통합신청서</strong> - Application Form (Report Form)</li>
+                <li><strong>거주/숙소제공 확인서</strong> - Confirmation of Residence/Accommodation</li>
+                <li><strong>성범죄경력 및 아동학대범죄전력 조회 요청서</strong> - Criminal Record Check Request Form (Sex Crimes & Child Abuse)</li>
+                <li><strong>위임장 및 동의서</strong> - Delegation and Consent Form</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Guide by <strong>Kang & Kriel Recruitment</strong></p>
+        <p style="margin-top: 8px; font-size: 0.8rem;">Interactive version v1.0 | Your progress is saved automatically</p>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        // ========================================
+        // STORAGE KEY - Namespaced
+        // ========================================
+        const STORAGE_KEY = 'new_teachers_guide_v1';
+
+        // ========================================
+        // STATE MANAGEMENT
+        // ========================================
+        let state = {
+            theme: 'light',
+            checkedItems: {},
+            openSteps: [1]
+        };
+
+        // Load state from localStorage
+        function loadState() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    state = { ...state, ...parsed };
+                }
+            } catch (e) {
+                console.error('Failed to load state:', e);
+            }
+        }
+
+        // Save state to localStorage
+        function saveState() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+            } catch (e) {
+                console.error('Failed to save state:', e);
+            }
+        }
+
+        // ========================================
+        // THEME TOGGLE
+        // ========================================
+        function initTheme() {
+            const savedTheme = state.theme;
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            setTheme(theme);
+        }
+
+        function setTheme(theme) {
+            state.theme = theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.querySelector('.theme-icon').textContent = theme === 'dark' ? '☀️' : '🌙';
+            saveState();
+        }
+
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            setTheme(state.theme === 'dark' ? 'light' : 'dark');
+        });
+
+        // ========================================
+        // CHECKBOX HANDLING
+        // ========================================
+        function initCheckboxes() {
+            document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
+                const id = checkbox.dataset.id;
+
+                // Restore state
+                if (state.checkedItems[id]) {
+                    checkbox.checked = true;
+                    checkbox.closest('.checklist-item').classList.add('checked');
+                }
+
+                // Add event listener
+                checkbox.addEventListener('change', (e) => {
+                    const item = e.target.closest('.checklist-item');
+
+                    if (e.target.checked) {
+                        state.checkedItems[id] = true;
+                        item.classList.add('checked');
+                        showToast('Item completed!', 'Progress saved automatically');
+                    } else {
+                        delete state.checkedItems[id];
+                        item.classList.remove('checked');
+                    }
+
+                    saveState();
+                    updateProgress();
+                });
+            });
+        }
+
+        // ========================================
+        // PROGRESS TRACKING
+        // ========================================
+        function updateProgress() {
+            const total = document.querySelectorAll('.checklist-item input[type="checkbox"]').length;
+            const checked = Object.keys(state.checkedItems).length;
+            const percent = Math.round((checked / total) * 100);
+
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressBar').style.width = percent + '%';
+
+            // Update step badges
+            document.querySelectorAll('.step').forEach(step => {
+                const stepNum = step.dataset.step;
+                const stepCheckboxes = step.querySelectorAll('.checklist-item input[type="checkbox"]');
+                const stepChecked = Array.from(stepCheckboxes).filter(cb => cb.checked).length;
+
+                const badge = step.querySelector('.step-badge');
+                if (badge) {
+                    badge.querySelector('.badge-count').textContent = stepChecked;
+                    badge.querySelector('.badge-total').textContent = stepCheckboxes.length;
+                }
+
+                // Update step completion status
+                const progressStep = document.querySelector(`.progress-step[data-step="${stepNum}"]`);
+                if (stepChecked === stepCheckboxes.length && stepCheckboxes.length > 0) {
+                    step.classList.add('complete');
+                    if (progressStep) progressStep.classList.add('complete');
+                } else {
+                    step.classList.remove('complete');
+                    if (progressStep) progressStep.classList.remove('complete');
+                }
+            });
+
+            // Update step markers
+            updateStepMarkers();
+        }
+
+        function updateStepMarkers() {
+            document.querySelectorAll('.step').forEach(step => {
+                const marker = step.querySelector('.step-marker');
+                if (step.classList.contains('complete')) {
+                    marker.textContent = '✓';
+                } else {
+                    marker.textContent = step.dataset.step;
+                }
+            });
+        }
+
+        // ========================================
+        // ACCORDION
+        // ========================================
+        function toggleStep(stepEl) {
+            const isOpen = stepEl.classList.contains('open');
+            const stepNum = parseInt(stepEl.dataset.step);
+
+            if (isOpen) {
+                stepEl.classList.remove('open');
+                state.openSteps = state.openSteps.filter(s => s !== stepNum);
+            } else {
+                stepEl.classList.add('open');
+                if (!state.openSteps.includes(stepNum)) {
+                    state.openSteps.push(stepNum);
+                }
+            }
+
+            saveState();
+        }
+
+        function expandAll() {
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.add('open');
+            });
+            state.openSteps = [1, 2, 3, 4];
+            saveState();
+        }
+
+        function collapseAll() {
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('open');
+            });
+            state.openSteps = [];
+            saveState();
+        }
+
+        function initAccordion() {
+            document.querySelectorAll('.step').forEach(step => {
+                const stepNum = parseInt(step.dataset.step);
+                if (state.openSteps.includes(stepNum)) {
+                    step.classList.add('open');
+                } else {
+                    step.classList.remove('open');
+                }
+            });
+        }
+
+        // ========================================
+        // STICKY PROGRESS
+        // ========================================
+        function initStickyProgress() {
+            const wrapper = document.getElementById('progressWrapper');
+            const hero = document.querySelector('.hero');
+
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (!entry.isIntersecting) {
+                        wrapper.classList.add('scrolled');
+                    } else {
+                        wrapper.classList.remove('scrolled');
+                    }
+                },
+                { threshold: 0, rootMargin: '-100px 0px 0px 0px' }
+            );
+
+            observer.observe(hero);
+        }
+
+        // ========================================
+        // TOAST NOTIFICATIONS
+        // ========================================
+        function showToast(title, message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+                <span class="toast-icon">✅</span>
+                <div class="toast-content">
+                    <div class="toast-title">${title}</div>
+                    <div class="toast-message">${message}</div>
+                </div>
+            `;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(100px)';
+                toast.style.transition = 'all 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+
+        // ========================================
+        // RESET PROGRESS
+        // ========================================
+        function resetProgress() {
+            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+                state.checkedItems = {};
+                saveState();
+
+                document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(cb => {
+                    cb.checked = false;
+                    cb.closest('.checklist-item').classList.remove('checked');
+                });
+
+                updateProgress();
+                showToast('Progress Reset', 'All items have been unchecked');
+            }
+        }
+
+        // ========================================
+        // KEYBOARD ACCESSIBILITY
+        // ========================================
+        document.querySelectorAll('.checklist-item').forEach(item => {
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const checkbox = item.querySelector('input[type="checkbox"]');
+                    checkbox.checked = !checkbox.checked;
+                    checkbox.dispatchEvent(new Event('change'));
+                }
+            });
+        });
+
+        // ========================================
+        // INITIALIZATION
+        // ========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            loadState();
+            initTheme();
+            initCheckboxes();
+            initAccordion();
+            initStickyProgress();
+            updateProgress();
+        });
+    </script>
+</body>
+</html>

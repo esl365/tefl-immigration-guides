@@ -1,0 +1,2635 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#14b8a6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>신규 외국인 강사 입국 후 절차 안내 (고용주용)</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           CSS VARIABLES - DESIGN TOKENS
+           ======================================== */
+        :root {
+            /* Primary Colors - Teal (비즈니스/전문성) */
+            --primary-50: #f0fdfa;
+            --primary-100: #ccfbf1;
+            --primary-200: #99f6e4;
+            --primary-300: #5eead4;
+            --primary-400: #2dd4bf;
+            --primary-500: #14b8a6;
+            --primary-600: #0d9488;
+            --primary-700: #0f766e;
+            --primary: #14b8a6;
+            --primary-light: #2dd4bf;
+            --primary-dark: #0d9488;
+
+            /* Secondary Colors - Indigo (강사 관련) */
+            --secondary-50: #eef2ff;
+            --secondary-100: #e0e7ff;
+            --secondary-500: #6366f1;
+            --secondary: #6366f1;
+
+            /* Accent Colors - Amber */
+            --accent-400: #fbbf24;
+            --accent-500: #f59e0b;
+            --accent-600: #d97706;
+            --accent: #f59e0b;
+
+            /* Semantic Colors */
+            --success-50: #ecfdf5;
+            --success-100: #d1fae5;
+            --success-400: #34d399;
+            --success-500: #10b981;
+            --success-600: #059669;
+            --success: #10b981;
+
+            --warning-50: #fffbeb;
+            --warning-100: #fef3c7;
+            --warning-400: #fbbf24;
+            --warning-500: #f59e0b;
+            --warning: #f59e0b;
+
+            --danger-50: #fef2f2;
+            --danger-400: #f87171;
+            --danger-500: #ef4444;
+            --danger-600: #dc2626;
+            --danger: #ef4444;
+
+            /* Neutral Colors */
+            --gray-50: #fafafa;
+            --gray-100: #f4f4f5;
+            --gray-200: #e4e4e7;
+            --gray-300: #d4d4d8;
+            --gray-400: #a1a1aa;
+            --gray-500: #71717a;
+            --gray-600: #52525b;
+            --gray-700: #3f3f46;
+            --gray-800: #27272a;
+            --gray-900: #18181b;
+            --gray-950: #09090b;
+
+            /* Light Theme */
+            --bg: #fafafa;
+            --bg-elevated: #ffffff;
+            --bg-card: #ffffff;
+            --bg-hover: #f4f4f5;
+            --text: #18181b;
+            --text-secondary: #3f3f46;
+            --text-muted: #71717a;
+            --border: #e4e4e7;
+            --border-light: #f4f4f5;
+
+            /* Shadows */
+            --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            --shadow-glow: 0 0 40px rgba(20, 184, 166, 0.15);
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-2xl: 32px;
+            --radius-full: 9999px;
+
+            /* Transitions */
+            --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+            /* Z-Index Scale */
+            --z-dropdown: 100;
+            --z-sticky: 200;
+            --z-modal: 300;
+            --z-toast: 400;
+
+            /* Focus Ring */
+            --focus-ring: 0 0 0 3px rgba(20, 184, 166, 0.4);
+        }
+
+        /* Dark Theme */
+        [data-theme="dark"] {
+            --bg: #09090b;
+            --bg-elevated: #18181b;
+            --bg-card: #18181b;
+            --bg-hover: #27272a;
+            --text: #fafafa;
+            --text-secondary: #d4d4d8;
+            --text-muted: #a1a1aa;
+            --border: #27272a;
+            --border-light: #3f3f46;
+
+            --shadow-xs: 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.4), 0 2px 4px -1px rgba(0,0,0,0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.4), 0 4px 6px -2px rgba(0,0,0,0.3);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.5), 0 10px 10px -5px rgba(0,0,0,0.3);
+            --shadow-glow: 0 0 60px rgba(20, 184, 166, 0.3);
+        }
+
+        /* ========================================
+           BASE STYLES
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+            min-height: 100vh;
+            min-height: 100dvh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 10000;
+            transition: top 0.3s var(--ease-out);
+        }
+
+        .skip-link:focus {
+            top: 20px;
+        }
+
+        :focus-visible {
+            outline: none;
+            box-shadow: var(--focus-ring);
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========================================
+           FLOATING ACTIONS
+           ======================================== */
+        .floating-actions {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: var(--z-sticky);
+            display: flex;
+            gap: 12px;
+        }
+
+        .fab {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            border: none;
+            background: var(--bg-card);
+            color: var(--text);
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s var(--ease-out);
+            backdrop-filter: blur(10px);
+        }
+
+        .fab:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .fab:active {
+            transform: scale(0.95);
+        }
+
+        .bottom-actions {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: var(--z-sticky);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .action-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 24px;
+            border-radius: var(--radius-full);
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .action-pill--primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .action-pill--primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(20, 184, 166, 0.4);
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            position: relative;
+            padding: 60px 20px 80px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(20, 184, 166, 0.3), transparent),
+                radial-gradient(ellipse 60% 50% at 80% 50%, rgba(6, 182, 212, 0.2), transparent),
+                radial-gradient(ellipse 50% 40% at 20% 80%, rgba(34, 197, 94, 0.2), transparent),
+                linear-gradient(180deg, var(--primary-600) 0%, var(--primary-700) 100%);
+            z-index: -2;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: var(--radius-lg);
+            padding: 20px 12px;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .stat-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-4px);
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--primary);
+            padding: 16px 32px;
+            border-radius: var(--radius-full);
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s var(--ease-spring);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-xl), 0 0 40px rgba(255,255,255,0.3);
+        }
+
+        /* ========================================
+           PROGRESS TRACKER
+           ======================================== */
+        .progress-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: var(--z-sticky);
+            background: var(--bg);
+            padding: 16px 0;
+            margin-bottom: 20px;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .progress-wrapper.scrolled {
+            background: var(--bg-elevated);
+            box-shadow: var(--shadow-md);
+            padding: 12px 0;
+        }
+
+        .progress-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 20px 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+
+        .progress-wrapper.scrolled .progress-card {
+            box-shadow: none;
+            border-color: transparent;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .progress-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .progress-percentage {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        .progress-bar-container {
+            position: relative;
+            height: 12px;
+            background: var(--gray-200);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+
+        [data-theme="dark"] .progress-bar-container {
+            background: var(--gray-800);
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            border-radius: var(--radius-full);
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-400) 100%);
+            transition: width 0.6s var(--ease-out);
+            position: relative;
+        }
+
+        .progress-bar-fill::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .progress-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 8px;
+            background: var(--bg-hover);
+            border-radius: var(--radius-md);
+            font-size: 0.75rem;
+            text-align: center;
+            transition: all 0.2s var(--ease-out);
+        }
+
+        .progress-step.complete {
+            background: var(--primary-50);
+            color: var(--primary-700);
+        }
+
+        [data-theme="dark"] .progress-step.complete {
+            background: rgba(20, 184, 166, 0.15);
+            color: var(--primary-400);
+        }
+
+        .progress-step-indicator {
+            width: 24px;
+            height: 24px;
+            border-radius: var(--radius-full);
+            background: var(--gray-300);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--gray-600);
+            flex-shrink: 0;
+        }
+
+        .progress-step.complete .progress-step-indicator {
+            background: var(--primary);
+            color: white;
+        }
+
+        .progress-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            border-radius: var(--radius-md);
+            font-size: 0.875rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s var(--ease-out);
+        }
+
+        .btn--ghost {
+            background: transparent;
+            color: var(--text-muted);
+        }
+
+        .btn--ghost:hover {
+            background: var(--bg-hover);
+            color: var(--text);
+        }
+
+        .btn--danger {
+            background: var(--danger-50);
+            color: var(--danger);
+        }
+
+        .btn--danger:hover {
+            background: var(--danger);
+            color: white;
+        }
+
+        /* ========================================
+           RESPONSIBILITY TAGS
+           ======================================== */
+        .responsibility-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .responsibility-tag.employer {
+            background: var(--primary-100);
+            color: var(--primary-700);
+        }
+
+        [data-theme="dark"] .responsibility-tag.employer {
+            background: rgba(20, 184, 166, 0.2);
+            color: var(--primary-400);
+        }
+
+        .responsibility-tag.teacher {
+            background: var(--secondary-100);
+            color: var(--secondary-500);
+        }
+
+        [data-theme="dark"] .responsibility-tag.teacher {
+            background: rgba(99, 102, 241, 0.2);
+            color: #818cf8;
+        }
+
+        .responsibility-tag.guide {
+            background: var(--gray-200);
+            color: var(--gray-700);
+        }
+
+        [data-theme="dark"] .responsibility-tag.guide {
+            background: var(--gray-700);
+            color: var(--gray-300);
+        }
+
+        .responsibility-tag.warning {
+            background: var(--warning-100);
+            color: var(--accent-600);
+        }
+
+        [data-theme="dark"] .responsibility-tag.warning {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--accent-400);
+        }
+
+        /* ========================================
+           QUICK REFERENCE SECTION
+           ======================================== */
+        .quick-ref {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid var(--primary);
+        }
+
+        .quick-ref-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .quick-ref-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .quick-ref-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .quick-ref-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .quick-ref-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .quick-ref-card {
+            background: var(--bg);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .quick-ref-card-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .quick-ref-list {
+            list-style: none;
+        }
+
+        .quick-ref-list li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .quick-ref-list li::before {
+            content: '☐';
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ========================================
+           TIMELINE STEPS
+           ======================================== */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .step {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .step-marker {
+            position: absolute;
+            left: -40px;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--bg-card);
+            border: 3px solid var(--border);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 1;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .step.complete .step-marker {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.3s var(--ease-out);
+        }
+
+        .step-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .step-header {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-card);
+            transition: background 0.2s var(--ease-out);
+            user-select: none;
+        }
+
+        .step-header:hover {
+            background: var(--bg-hover);
+        }
+
+        .step-header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-100);
+            color: var(--primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        [data-theme="dark"] .step-number {
+            background: rgba(20, 184, 166, 0.2);
+        }
+
+        .step.complete .step-number {
+            background: var(--primary);
+            color: white;
+        }
+
+        .step-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+
+        .step-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .step-header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: var(--bg-hover);
+            color: var(--text-muted);
+        }
+
+        .step.complete .step-badge {
+            background: var(--primary-100);
+            color: var(--primary);
+        }
+
+        .step-chevron {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            transition: transform 0.3s var(--ease-out);
+        }
+
+        .step.open .step-chevron {
+            transform: rotate(180deg);
+        }
+
+        .step-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s var(--ease-out);
+        }
+
+        .step.open .step-content {
+            grid-template-rows: 1fr;
+        }
+
+        .step-content-inner {
+            overflow: hidden;
+        }
+
+        .step-body {
+            padding: 0 24px 24px;
+        }
+
+        /* ========================================
+           DOCUMENT CARDS
+           ======================================== */
+        .doc-section {
+            margin-bottom: 24px;
+        }
+
+        .doc-section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 18px;
+            background: var(--bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            transition: all 0.2s var(--ease-out);
+            cursor: pointer;
+        }
+
+        .checklist-item:hover {
+            border-color: var(--primary-300);
+            background: var(--bg-hover);
+        }
+
+        .checklist-item.checked {
+            background: var(--primary-50);
+            border-color: var(--primary-400);
+        }
+
+        [data-theme="dark"] .checklist-item.checked {
+            background: rgba(20, 184, 166, 0.1);
+        }
+
+        .checklist-item.checked .checklist-item-title {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .checkbox input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .checkbox-visual {
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s var(--ease-out);
+            background: var(--bg-card);
+        }
+
+        .checkbox input:checked + .checkbox-visual {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .checkbox-visual svg {
+            width: 14px;
+            height: 14px;
+            stroke: white;
+            stroke-width: 3;
+            fill: none;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.2s var(--ease-spring);
+        }
+
+        .checkbox input:checked + .checkbox-visual svg {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .checklist-item-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .checklist-item-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 2px;
+            transition: all 0.2s var(--ease-out);
+        }
+
+        .checklist-item-english {
+            font-size: 0.8rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .checklist-item-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ========================================
+           INFO CARDS
+           ======================================== */
+        .info-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+
+        .info-card--warning {
+            border-color: var(--warning);
+            background: var(--warning-50);
+        }
+
+        [data-theme="dark"] .info-card--warning {
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+        .info-card--tip {
+            border-color: var(--primary);
+            background: var(--primary-50);
+        }
+
+        [data-theme="dark"] .info-card--tip {
+            background: rgba(20, 184, 166, 0.1);
+        }
+
+        .info-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .info-card-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .info-card--warning .info-card-icon {
+            background: var(--warning);
+        }
+
+        .info-card--tip .info-card-icon {
+            background: var(--primary);
+        }
+
+        .info-card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .info-card ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .info-card li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .info-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* ========================================
+           DOWNLOAD BUTTON
+           ======================================== */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s var(--ease-out);
+            animation: pulse-glow 2s infinite;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: var(--shadow-xl), 0 0 30px rgba(229, 62, 62, 0.5);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: var(--shadow-md), 0 0 20px rgba(229, 62, 62, 0.3);
+            }
+            50% {
+                box-shadow: var(--shadow-lg), 0 0 30px rgba(229, 62, 62, 0.5);
+            }
+        }
+
+        /* ========================================
+           FORMS SECTION
+           ======================================== */
+        .forms-section {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            margin-top: 40px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+
+        .forms-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .forms-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .forms-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .forms-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+
+        .forms-list {
+            list-style: none;
+        }
+
+        .forms-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .forms-list li:last-child {
+            border-bottom: none;
+        }
+
+        .form-icon {
+            font-size: 1.25rem;
+        }
+
+        .form-info {
+            flex: 1;
+        }
+
+        .form-name {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .form-name-en {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ========================================
+           FAQ SECTION
+           ======================================== */
+        .faq-section {
+            margin-top: 40px;
+        }
+
+        .faq-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text);
+            transition: background 0.2s var(--ease-out);
+        }
+
+        .faq-question:hover {
+            background: var(--bg-hover);
+        }
+
+        .faq-chevron {
+            transition: transform 0.3s var(--ease-out);
+            color: var(--text-muted);
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s var(--ease-out);
+        }
+
+        .faq-item.open .faq-answer {
+            grid-template-rows: 1fr;
+        }
+
+        .faq-answer-inner {
+            overflow: hidden;
+        }
+
+        .faq-answer-content {
+            padding: 0 20px 18px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+        }
+
+        /* ========================================
+           TOAST
+           ======================================== */
+        .toast-container {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            z-index: var(--z-toast);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .toast {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--border);
+            animation: slideInRight 0.3s var(--ease-out);
+            max-width: 320px;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .toast-icon {
+            font-size: 1.25rem;
+        }
+
+        .toast-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+
+        .toast-message {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ========================================
+           MOBILE RESPONSIVE
+           ======================================== */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 16px 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .quick-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .stat-card {
+                padding: 16px 12px;
+            }
+
+            .progress-wrapper {
+                padding: 8px 0;
+            }
+
+            .progress-wrapper.scrolled {
+                padding: 6px 0;
+            }
+
+            .progress-card {
+                padding: 12px 16px;
+            }
+
+            .progress-wrapper.scrolled .progress-steps,
+            .progress-wrapper.scrolled .progress-actions {
+                display: none;
+            }
+
+            .progress-wrapper.scrolled .progress-header {
+                margin-bottom: 8px;
+            }
+
+            .progress-wrapper.scrolled .progress-bar-container {
+                height: 6px;
+            }
+
+            .progress-steps {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
+            }
+
+            .progress-step {
+                padding: 8px 6px;
+                font-size: 0.65rem;
+            }
+
+            .progress-step-indicator {
+                width: 20px;
+                height: 20px;
+                font-size: 0.65rem;
+            }
+
+            .quick-ref-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 30px;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .step-marker {
+                left: -30px;
+                width: 24px;
+                height: 24px;
+                font-size: 0.75rem;
+            }
+
+            .step-header {
+                padding: 16px;
+                flex-wrap: wrap;
+            }
+
+            .step-header-left {
+                gap: 12px;
+            }
+
+            .step-number {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
+
+            .step-title {
+                font-size: 0.95rem;
+            }
+
+            .step-header-right {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 12px;
+            }
+
+            .step-body {
+                padding: 0 16px 16px;
+            }
+
+            .checklist-item {
+                padding: 12px 14px;
+                gap: 10px;
+            }
+
+            .floating-actions {
+                top: 12px;
+                right: 12px;
+            }
+
+            .fab {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .bottom-actions {
+                bottom: 16px;
+                right: 16px;
+            }
+
+            .action-pill {
+                padding: 12px 18px;
+                font-size: 0.85rem;
+            }
+
+            .forms-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .progress-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .progress-percentage {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ========================================
+           PRINT STYLES
+           ======================================== */
+        @media print {
+            .floating-actions,
+            .bottom-actions,
+            .toast-container,
+            .progress-actions,
+            .fab {
+                display: none !important;
+            }
+
+            .hero {
+                background: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .step {
+                break-inside: avoid;
+            }
+
+            .step-content {
+                grid-template-rows: 1fr !important;
+            }
+
+            .checklist-item.checked {
+                background: #f0fdfa !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            body {
+                font-size: 11pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">본문으로 이동</a>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions">
+        <button class="fab" id="themeToggle" aria-label="다크모드 전환" title="다크모드 전환">
+            <span class="theme-icon">🌙</span>
+        </button>
+    </div>
+
+    <!-- Bottom Actions -->
+    <div class="bottom-actions">
+        <button class="action-pill action-pill--primary" onclick="window.print()" aria-label="인쇄">
+            <span>🖨️</span>
+            <span>인쇄 / PDF</span>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>🏫</span>
+                <span>고용주용 가이드</span>
+            </div>
+            <h1>신규 외국인 강사<br>입국 후 절차 안내</h1>
+            <p class="hero-subtitle">E-2 비자 강사의 외국인등록증(ARC) 발급을 위한 고용주 준비사항 체크리스트</p>
+
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <span class="stat-value">5</span>
+                    <span class="stat-label">단계</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">8</span>
+                    <span class="stat-label">준비 서류</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">3-5주</span>
+                    <span class="stat-label">ARC 발급</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">39,000</span>
+                    <span class="stat-label">원 수수료</span>
+                </div>
+            </div>
+
+            <a href="#main-content" class="hero-cta">
+                <span>시작하기</span>
+                <span>↓</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="container">
+        <!-- Progress Tracker -->
+        <div class="progress-wrapper" id="progressWrapper">
+            <div class="progress-card">
+                <div class="progress-header">
+                    <div class="progress-title">
+                        <span>📋</span>
+                        <span>진행 상황</span>
+                    </div>
+                    <div class="progress-percentage" id="progressPercent">0%</div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+                </div>
+                <div class="progress-steps">
+                    <div class="progress-step" data-step="1">
+                        <div class="progress-step-indicator">1</div>
+                        <span>입국 전</span>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="progress-step-indicator">2</div>
+                        <span>건강검진</span>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="progress-step-indicator">3</div>
+                        <span>ARC 서류</span>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="progress-step-indicator">4</div>
+                        <span>출입국</span>
+                    </div>
+                    <div class="progress-step" data-step="5">
+                        <div class="progress-step-indicator">5</div>
+                        <span>교육청</span>
+                    </div>
+                </div>
+                <div class="progress-actions">
+                    <button class="btn btn--ghost" onclick="expandAll()">
+                        <span>📂</span> 모두 펼치기
+                    </button>
+                    <button class="btn btn--ghost" onclick="collapseAll()">
+                        <span>📁</span> 모두 접기
+                    </button>
+                    <button class="btn btn--danger" onclick="resetProgress()">
+                        <span>🔄</span> 초기화
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Reference -->
+        <section class="quick-ref">
+            <div class="quick-ref-header">
+                <div class="quick-ref-icon">⚡</div>
+                <div>
+                    <div class="quick-ref-title">빠른 참조: 고용주 준비 서류</div>
+                    <div class="quick-ref-subtitle">한눈에 보는 필수 준비 목록</div>
+                </div>
+            </div>
+            <div class="quick-ref-grid">
+                <div class="quick-ref-card">
+                    <div class="quick-ref-card-title">
+                        <span style="color: var(--primary);">🏫</span>
+                        학원에서 준비
+                    </div>
+                    <ul class="quick-ref-list">
+                        <li>사업자등록증 사본</li>
+                        <li>고용계약서</li>
+                        <li>숙소계약서 사본</li>
+                        <li>거주/숙소제공 확인서</li>
+                        <li>숙소제공자 신분증 사본</li>
+                        <li>학원운영등록증 (교육청용)</li>
+                    </ul>
+                </div>
+                <div class="quick-ref-card">
+                    <div class="quick-ref-card-title">
+                        <span style="color: var(--secondary);">👤</span>
+                        강사가 준비
+                    </div>
+                    <ul class="quick-ref-list">
+                        <li>여권 원본 및 사본</li>
+                        <li>여권사진 (35mm×45mm)</li>
+                        <li>건강검진 결과서 (밀봉)</li>
+                        <li>통합신청서 작성</li>
+                        <li>수수료 현금 (39,000원)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Steps -->
+        <div class="timeline" role="list">
+            <!-- Step 1: 입국 전 준비 -->
+            <article class="step open" data-step="1" role="listitem">
+                <div class="step-marker">1</div>
+                <div class="step-card">
+                    <div class="step-header" onclick="toggleStep(this.parentElement.parentElement)" role="button" aria-expanded="true">
+                        <div class="step-header-left">
+                            <div class="step-number">1</div>
+                            <div>
+                                <div class="step-title">강사 입국 전 준비</div>
+                                <div class="step-meta">계약서 및 숙소 준비</div>
+                            </div>
+                        </div>
+                        <div class="step-header-right">
+                            <div class="step-badge">
+                                <span class="badge-count">0</span>/<span class="badge-total">3</span>
+                            </div>
+                            <span class="step-chevron">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-content-inner">
+                            <div class="step-body">
+                                <div class="responsibility-tag employer">
+                                    <span>🏫</span>
+                                    <span>학원 준비</span>
+                                </div>
+
+                                <div class="checklist" data-step="1">
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="s1-1">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">고용계약서 작성 및 서명</div>
+                                            <div class="checklist-item-english">Employment Contract</div>
+                                            <div class="checklist-item-desc">강사 서명 포함, 근무조건 명시</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="s1-2">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">숙소 계약 또는 제공 준비</div>
+                                            <div class="checklist-item-english">Housing Contract</div>
+                                            <div class="checklist-item-desc">숙소계약서 또는 기숙사 배정</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="s1-3">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">사업자등록증 사본 준비</div>
+                                            <div class="checklist-item-english">Business Registration Certificate</div>
+                                            <div class="checklist-item-desc">고유번호증도 가능</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 2: 건강검진 안내 -->
+            <article class="step" data-step="2" role="listitem">
+                <div class="step-marker">2</div>
+                <div class="step-card">
+                    <div class="step-header" onclick="toggleStep(this.parentElement.parentElement)" role="button" aria-expanded="false">
+                        <div class="step-header-left">
+                            <div class="step-number">2</div>
+                            <div>
+                                <div class="step-title">건강검진 안내</div>
+                                <div class="step-meta">강사 입국 후 즉시</div>
+                            </div>
+                        </div>
+                        <div class="step-header-right">
+                            <div class="step-badge">
+                                <span class="badge-count">0</span>/<span class="badge-total">3</span>
+                            </div>
+                            <span class="step-chevron">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-content-inner">
+                            <div class="step-body">
+                                <div class="responsibility-tag guide">
+                                    <span>📋</span>
+                                    <span>강사에게 안내</span>
+                                </div>
+
+                                <div class="info-card info-card--tip" style="margin-bottom: 20px;">
+                                    <div class="info-card-header">
+                                        <div class="info-card-icon">💡</div>
+                                        <div class="info-card-title">강사에게 전달할 정보</div>
+                                    </div>
+                                    <p>병원에서 <strong>"E-2 회화지도 자격자용 신체검사결과서"</strong> 요청하도록 안내</p>
+                                    <ul>
+                                        <li>검사 전 8시간 금식 필요</li>
+                                        <li>여권, 여권사진 2매 지참</li>
+                                        <li>비용: 약 100,000원 (병원별 상이)</li>
+                                        <li><a href="https://www.hikorea.go.kr/board/BoardNtcDetailR.pt?BBS_SEQ=1&BBS_GB_CD=BS10&NTCCTT_SEQ=365&page=1" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline;">가까운 법무부지정 건강검진 가능 의료기관 확인 ↗</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="checklist" data-step="2">
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="s2-1">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">건강검진 병원 안내</div>
+                                            <div class="checklist-item-desc">지역 내 외국인 검진 가능 병원 정보 제공</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="s2-2">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">검진 비용 안내</div>
+                                            <div class="checklist-item-desc">60,000 ~ 150,000원 (강사 부담 또는 학원 지원)</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="s2-3">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">검진 결과 수령 확인</div>
+                                            <div class="checklist-item-desc">밀봉된 결과서 수령 (보통 3-5일 소요)</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 3: ARC 서류 준비 -->
+            <article class="step" data-step="3" role="listitem">
+                <div class="step-marker">3</div>
+                <div class="step-card">
+                    <div class="step-header" onclick="toggleStep(this.parentElement.parentElement)" role="button" aria-expanded="false">
+                        <div class="step-header-left">
+                            <div class="step-number">3</div>
+                            <div>
+                                <div class="step-title">외국인등록(ARC) 서류 준비</div>
+                                <div class="step-meta">출입국 방문 전 준비</div>
+                            </div>
+                        </div>
+                        <div class="step-header-right">
+                            <div class="step-badge">
+                                <span class="badge-count">0</span>/<span class="badge-total">10</span>
+                            </div>
+                            <span class="step-chevron">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-content-inner">
+                            <div class="step-body">
+                                <!-- 학원 준비 서류 -->
+                                <div class="doc-section">
+                                    <div class="responsibility-tag employer">
+                                        <span>🏫</span>
+                                        <span>학원에서 준비할 서류</span>
+                                    </div>
+                                    <div class="checklist" data-step="3">
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s3-1">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">사업자등록증 사본</div>
+                                                <div class="checklist-item-english">Business Registration Certificate</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s3-2">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">고용계약서 사본</div>
+                                                <div class="checklist-item-english">Employment Contract</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s3-3">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">숙소계약서 사본</div>
+                                                <div class="checklist-item-english">Housing Contract</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s3-4">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">거주/숙소제공 확인서</div>
+                                                <div class="checklist-item-english">Confirmation of Residence</div>
+                                                <div class="checklist-item-desc">양식 작성 후 서명/직인</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s3-5">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">숙소제공자 신분증 사본</div>
+                                                <div class="checklist-item-english">ID of Accommodation Provider</div>
+                                                <div class="checklist-item-desc">임대인 또는 학원장 신분증</div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- 강사 안내 사항 -->
+                                <div class="doc-section" style="margin-top: 24px;">
+                                    <div class="responsibility-tag guide">
+                                        <span>📋</span>
+                                        <span>강사에게 안내할 사항</span>
+                                    </div>
+                                    <div class="checklist">
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s3-6">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">통합신청서 작성 안내</div>
+                                                <div class="checklist-item-english">Application Form (통합신청서)</div>
+                                                <div class="checklist-item-desc">"외국인 등록" 체크</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s3-7">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">여권 원본 및 사본</div>
+                                                <div class="checklist-item-english">Passport (Original & Copy)</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s3-8">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">여권사진 1매 (35mm×45mm)</div>
+                                                <div class="checklist-item-desc">6개월 이내 촬영</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s3-9">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">건강검진 결과서 (밀봉)</div>
+                                                <div class="checklist-item-english">Medical Test Result (Sealed)</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s3-10">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">수수료 현금 준비</div>
+                                                <div class="checklist-item-desc">신청비 35,000원 + 우편료 4,000원 = <strong>39,000원</strong> (현금만 가능)</div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 4: 출입국 방문 -->
+            <article class="step" data-step="4" role="listitem">
+                <div class="step-marker">4</div>
+                <div class="step-card">
+                    <div class="step-header" onclick="toggleStep(this.parentElement.parentElement)" role="button" aria-expanded="false">
+                        <div class="step-header-left">
+                            <div class="step-number">4</div>
+                            <div>
+                                <div class="step-title">출입국관리사무소 방문</div>
+                                <div class="step-meta">서류 제출 및 신청</div>
+                            </div>
+                        </div>
+                        <div class="step-header-right">
+                            <div class="step-badge">
+                                <span class="badge-count">0</span>/<span class="badge-total">3</span>
+                            </div>
+                            <span class="step-chevron">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-content-inner">
+                            <div class="step-body">
+                                <div class="responsibility-tag teacher">
+                                    <span>👤</span>
+                                    <span>강사 방문 (학원 동행 가능)</span>
+                                </div>
+
+                                <div class="info-card info-card--warning" style="margin-bottom: 20px;">
+                                    <div class="info-card-header">
+                                        <div class="info-card-icon">⚠️</div>
+                                        <div class="info-card-title">방문 전 확인사항</div>
+                                    </div>
+                                    <ul>
+                                        <li>2023년부터 해외 입국자 ARC 신청은 <strong>예약 불필요</strong></li>
+                                        <li>서울/수원/인천: <strong>오전 7:30 이전</strong> 도착 권장</li>
+                                        <li>신분증, 현금 필수 지참</li>
+                                    </ul>
+                                </div>
+
+                                <div class="checklist" data-step="4">
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="s4-1">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">모든 서류 제출 완료</div>
+                                            <div class="checklist-item-desc">Step 3의 모든 서류</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="s4-2">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">수수료 납부 및 우편 수령 신청</div>
+                                            <div class="checklist-item-desc">35,000원 + 4,000원 (현금)</div>
+                                        </div>
+                                    </label>
+
+                                    <label class="checklist-item" tabindex="0">
+                                        <div class="checkbox">
+                                            <input type="checkbox" data-id="s4-3">
+                                            <div class="checkbox-visual">
+                                                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item-content">
+                                            <div class="checklist-item-title">ARC 수령 (3-5주 후 배송)</div>
+                                            <div class="checklist-item-desc">등록된 주소로 우편 수령</div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="info-card info-card--tip" style="margin-top: 20px;">
+                                    <div class="info-card-header">
+                                        <div class="info-card-icon">💡</div>
+                                        <div class="info-card-title">정보공개청구 (선택)</div>
+                                    </div>
+                                    <p>강사가 학위증명서/범죄경력 사본이 필요한 경우, 출입국 내 별도 창구에서 <strong>"정보공개청구"</strong> 신청 안내</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 5: 교육청 등록 -->
+            <article class="step" data-step="5" role="listitem">
+                <div class="step-marker">5</div>
+                <div class="step-card">
+                    <div class="step-header" onclick="toggleStep(this.parentElement.parentElement)" role="button" aria-expanded="false">
+                        <div class="step-header-left">
+                            <div class="step-number">5</div>
+                            <div>
+                                <div class="step-title">교육청 등록</div>
+                                <div class="step-meta">채용통보 및 성범죄경력 조회</div>
+                            </div>
+                        </div>
+                        <div class="step-header-right">
+                            <div class="step-badge">
+                                <span class="badge-count">0</span>/<span class="badge-total">5</span>
+                            </div>
+                            <span class="step-chevron">▼</span>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-content-inner">
+                            <div class="step-body">
+                                <div class="responsibility-tag employer">
+                                    <span>🏫</span>
+                                    <span>학원에서 처리</span>
+                                </div>
+
+                                <div class="info-card info-card--info" style="margin-bottom: 20px;">
+                                    <div class="info-card-header">
+                                        <div class="info-card-icon">📅</div>
+                                        <div class="info-card-title">채용통보 기한 안내</div>
+                                    </div>
+                                    <ul style="margin: 0; padding-left: 20px;">
+                                        <li>교육청 채용통보는 <strong>근무시작 10~15일 이내</strong> (지역별 상이)</li>
+                                        <li>채용통보에는 외국인등록증(ARC)이 필요하므로, <strong>입국 후 빠른 외국인등록 신청</strong> 권장</li>
+                                        <li>외국인등록 지연 시, 교육청 담당자에게 사정 설명 후 양해 요청 가능</li>
+                                    </ul>
+                                </div>
+
+                                <div class="info-card info-card--warning" style="margin-bottom: 20px;">
+                                    <div class="info-card-header">
+                                        <div class="info-card-icon">⚠️</div>
+                                        <div class="info-card-title">교육청별 요구사항 상이</div>
+                                    </div>
+                                    <p>제출 서류가 교육청마다 다를 수 있습니다. <strong>사전에 관할 교육청에 확인</strong>하시기 바랍니다.</p>
+                                </div>
+
+                                <div class="doc-section">
+                                    <div class="doc-section-title">
+                                        <span>📄</span>
+                                        채용통보용 제출서류
+                                    </div>
+                                    <div class="checklist" data-step="5">
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s5-1">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">채용통보서</div>
+                                                <div class="checklist-item-english">Employment Notification Form</div>
+                                                <div class="checklist-item-desc">교육청 양식 사용</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s5-2">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">성범죄경력 및 아동학대범죄전력 조회회신서</div>
+                                                <div class="checklist-item-english">Criminal Record Check (Sex Crimes & Child Abuse)</div>
+                                                <div class="checklist-item-desc">경찰서 민원실에서 발급, 15일 이내 유효</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s5-3">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">여권 사본 및 외국인등록증 사본 (앞, 뒤)</div>
+                                                <div class="checklist-item-english">Passport Copy & ARC Copy (Front & Back)</div>
+                                                <div class="checklist-item-desc">외국인등록사실확인원(출입국사무소 발급)으로 대체 가능</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s5-4">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">건강진단서</div>
+                                                <div class="checklist-item-english">Health Certificate</div>
+                                                <div class="checklist-item-desc">법무부 지정 의료기관, 1개월 이내 발급, 기본진단 + TBPE(마약)검사 포함</div>
+                                            </div>
+                                        </label>
+
+                                        <label class="checklist-item" tabindex="0">
+                                            <div class="checkbox">
+                                                <input type="checkbox" data-id="s5-5">
+                                                <div class="checkbox-visual">
+                                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                                </div>
+                                            </div>
+                                            <div class="checklist-item-content">
+                                                <div class="checklist-item-title">학원설립운영등록증 사본</div>
+                                                <div class="checklist-item-english">Academy Establishment & Operation Registration Certificate</div>
+                                                <div class="checklist-item-desc">학원정보 확인용</div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="info-card info-card--tip" style="margin-top: 24px;">
+                                    <div class="info-card-header">
+                                        <div class="info-card-icon">🚔</div>
+                                        <div class="info-card-title">성범죄경력 및 아동학대범죄전력 조회 방법</div>
+                                    </div>
+                                    <p><strong>경찰서 민원실</strong>에서 신청합니다. 회신서는 발급일로부터 <strong>15일 이내</strong>만 유효합니다.</p>
+
+                                    <h4 style="margin: 16px 0 8px; font-size: 0.9rem;">강사 본인 방문 시:</h4>
+                                    <ul>
+                                        <li>성범죄경력 및 아동학대범죄전력 조회 요청서</li>
+                                        <li>학원설립운영등록증</li>
+                                        <li>외국인등록증(ARC)</li>
+                                    </ul>
+
+                                    <h4 style="margin: 16px 0 8px; font-size: 0.9rem;">학원 직원 대행 시:</h4>
+                                    <ul>
+                                        <li>성범죄경력 및 아동학대범죄전력 조회 요청서</li>
+                                        <li>위임장 및 동의서 (강사 자필 서명)</li>
+                                        <li>외국인등록증 또는 사실증명</li>
+                                        <li>신청 직원 재직증명서 (10일 이내)</li>
+                                        <li>신청 직원 신분증</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Forms Section -->
+        <section class="forms-section">
+            <div class="forms-header">
+                <div class="forms-title-group">
+                    <div class="forms-icon">📎</div>
+                    <div class="forms-title">양식 다운로드</div>
+                </div>
+                <a href="https://drive.google.com/file/d/13rYKhY3qchu2PS7oGqetz6WPrv3OMEX0/view?usp=sharing"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="download-btn">
+                    <span>📥</span>
+                    <span>전체 양식 다운로드 (PDF)</span>
+                </a>
+            </div>
+            <ul class="forms-list">
+                <li>
+                    <span class="form-icon">📄</span>
+                    <div class="form-info">
+                        <div class="form-name">통합신청서</div>
+                        <div class="form-name-en">Application Form (Report Form)</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="form-icon">🏠</span>
+                    <div class="form-info">
+                        <div class="form-name">거주/숙소제공 확인서</div>
+                        <div class="form-name-en">Confirmation of Residence/Accommodation</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="form-icon">🚔</span>
+                    <div class="form-info">
+                        <div class="form-name">성범죄경력 및 아동학대범죄전력 조회 요청서</div>
+                        <div class="form-name-en">Criminal Record Check Request Form (Sex Crimes & Child Abuse)</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="form-icon">✍️</span>
+                    <div class="form-info">
+                        <div class="form-name">위임장 및 동의서</div>
+                        <div class="form-name-en">Delegation and Consent Form</div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="faq-title">자주 묻는 질문 (FAQ)</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this.parentElement)">
+                    <span>숙소를 제공하지 않는 경우 어떻게 하나요?</span>
+                    <span class="faq-chevron">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <div class="faq-answer-content">
+                            강사가 직접 계약한 숙소의 임대차계약서와 임대인의 거주/숙소제공 확인서, 임대인 신분증 사본이 필요합니다. 임대인에게 해당 서류 협조를 요청하셔야 합니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this.parentElement)">
+                    <span>건강검진 비용은 누가 부담하나요?</span>
+                    <span class="faq-chevron">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <div class="faq-answer-content">
+                            법적으로 정해진 바는 없으나, 일반적으로 강사 본인이 부담합니다. 학원에서 지원하는 경우도 있으니 계약 시 협의하시기 바랍니다. 비용은 병원에 따라 60,000원 ~ 150,000원입니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this.parentElement)">
+                    <span>강사가 직접 출입국에 가야 하나요?</span>
+                    <span class="faq-chevron">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <div class="faq-answer-content">
+                            네, 외국인등록(ARC) 신청은 본인이 직접 방문해야 합니다. 다만 학원 담당자가 동행하여 서류 준비 및 진행을 도울 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this.parentElement)">
+                    <span>ARC 발급까지 얼마나 걸리나요?</span>
+                    <span class="faq-chevron">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <div class="faq-answer-content">
+                            신청 후 약 3-5주가 소요됩니다. 우편 수령을 선택하면 등록한 주소로 배송됩니다. 급한 경우 출입국에서 "외국인등록 사실증명"을 발급받아 임시로 사용할 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this.parentElement)">
+                    <span>성범죄 경력 조회는 언제 신청하나요?</span>
+                    <span class="faq-chevron">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        <div class="faq-answer-content">
+                            ARC 발급 후 (또는 외국인등록 사실증명 수령 후) 경찰서에서 신청할 수 있습니다. 교육청 제출 기한에 맞춰 미리 준비하시기 바랍니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>신규 외국인 강사 입국 후 절차 안내</strong> (고용주용) v1.0</p>
+        <p style="margin-top: 8px; font-size: 0.8rem;">진행 상황은 자동 저장됩니다</p>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        // Storage Key
+        const STORAGE_KEY = 'new_teacher_employer_guide_v1';
+
+        // State
+        let state = {
+            theme: 'light',
+            checkedItems: {},
+            openSteps: [1]
+        };
+
+        // Load State
+        function loadState() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    state = { ...state, ...parsed };
+                }
+            } catch (e) {
+                console.error('Failed to load state:', e);
+            }
+        }
+
+        // Save State
+        function saveState() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+            } catch (e) {
+                console.error('Failed to save state:', e);
+            }
+        }
+
+        // Theme
+        function initTheme() {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = state.theme || (prefersDark ? 'dark' : 'light');
+            setTheme(theme);
+        }
+
+        function setTheme(theme) {
+            state.theme = theme;
+            document.documentElement.setAttribute('data-theme', theme);
+            document.querySelector('.theme-icon').textContent = theme === 'dark' ? '☀️' : '🌙';
+            saveState();
+        }
+
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            setTheme(state.theme === 'dark' ? 'light' : 'dark');
+        });
+
+        // Checkboxes
+        function initCheckboxes() {
+            document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(checkbox => {
+                const id = checkbox.dataset.id;
+                if (state.checkedItems[id]) {
+                    checkbox.checked = true;
+                    checkbox.closest('.checklist-item').classList.add('checked');
+                }
+
+                checkbox.addEventListener('change', (e) => {
+                    const item = e.target.closest('.checklist-item');
+                    if (e.target.checked) {
+                        state.checkedItems[id] = true;
+                        item.classList.add('checked');
+                        showToast('완료!', '진행 상황이 저장되었습니다');
+                    } else {
+                        delete state.checkedItems[id];
+                        item.classList.remove('checked');
+                    }
+                    saveState();
+                    updateProgress();
+                });
+            });
+        }
+
+        // Progress
+        function updateProgress() {
+            const total = document.querySelectorAll('.checklist-item input[type="checkbox"]').length;
+            const checked = Object.keys(state.checkedItems).length;
+            const percent = Math.round((checked / total) * 100);
+
+            document.getElementById('progressPercent').textContent = percent + '%';
+            document.getElementById('progressBar').style.width = percent + '%';
+
+            // Update step badges
+            document.querySelectorAll('.step').forEach(step => {
+                const stepNum = step.dataset.step;
+                const stepCheckboxes = step.querySelectorAll('.checklist-item input[type="checkbox"]');
+                const stepChecked = Array.from(stepCheckboxes).filter(cb => cb.checked).length;
+
+                const badge = step.querySelector('.step-badge');
+                if (badge) {
+                    badge.querySelector('.badge-count').textContent = stepChecked;
+                    badge.querySelector('.badge-total').textContent = stepCheckboxes.length;
+                }
+
+                const progressStep = document.querySelector(`.progress-step[data-step="${stepNum}"]`);
+                if (stepChecked === stepCheckboxes.length && stepCheckboxes.length > 0) {
+                    step.classList.add('complete');
+                    if (progressStep) progressStep.classList.add('complete');
+                } else {
+                    step.classList.remove('complete');
+                    if (progressStep) progressStep.classList.remove('complete');
+                }
+            });
+
+            updateStepMarkers();
+        }
+
+        function updateStepMarkers() {
+            document.querySelectorAll('.step').forEach(step => {
+                const marker = step.querySelector('.step-marker');
+                if (step.classList.contains('complete')) {
+                    marker.textContent = '✓';
+                } else {
+                    marker.textContent = step.dataset.step;
+                }
+            });
+        }
+
+        // Accordion
+        function toggleStep(stepEl) {
+            const isOpen = stepEl.classList.contains('open');
+            const stepNum = parseInt(stepEl.dataset.step);
+
+            if (isOpen) {
+                stepEl.classList.remove('open');
+                state.openSteps = state.openSteps.filter(s => s !== stepNum);
+            } else {
+                stepEl.classList.add('open');
+                if (!state.openSteps.includes(stepNum)) {
+                    state.openSteps.push(stepNum);
+                }
+            }
+            saveState();
+        }
+
+        function expandAll() {
+            document.querySelectorAll('.step').forEach(step => step.classList.add('open'));
+            state.openSteps = [1, 2, 3, 4, 5];
+            saveState();
+        }
+
+        function collapseAll() {
+            document.querySelectorAll('.step').forEach(step => step.classList.remove('open'));
+            state.openSteps = [];
+            saveState();
+        }
+
+        function initAccordion() {
+            document.querySelectorAll('.step').forEach(step => {
+                const stepNum = parseInt(step.dataset.step);
+                if (state.openSteps.includes(stepNum)) {
+                    step.classList.add('open');
+                } else {
+                    step.classList.remove('open');
+                }
+            });
+        }
+
+        // FAQ
+        function toggleFaq(faqEl) {
+            faqEl.classList.toggle('open');
+        }
+
+        // Sticky Progress
+        function initStickyProgress() {
+            const wrapper = document.getElementById('progressWrapper');
+            const hero = document.querySelector('.hero');
+
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    wrapper.classList.toggle('scrolled', !entry.isIntersecting);
+                },
+                { threshold: 0, rootMargin: '-100px 0px 0px 0px' }
+            );
+            observer.observe(hero);
+        }
+
+        // Toast
+        function showToast(title, message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+                <span class="toast-icon">✅</span>
+                <div>
+                    <div class="toast-title">${title}</div>
+                    <div class="toast-message">${message}</div>
+                </div>
+            `;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(100px)';
+                toast.style.transition = 'all 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+
+        // Reset
+        function resetProgress() {
+            if (confirm('모든 진행 상황을 초기화하시겠습니까?')) {
+                state.checkedItems = {};
+                saveState();
+                document.querySelectorAll('.checklist-item input[type="checkbox"]').forEach(cb => {
+                    cb.checked = false;
+                    cb.closest('.checklist-item').classList.remove('checked');
+                });
+                updateProgress();
+                showToast('초기화 완료', '모든 항목이 초기화되었습니다');
+            }
+        }
+
+        // Keyboard
+        document.querySelectorAll('.checklist-item').forEach(item => {
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const checkbox = item.querySelector('input[type="checkbox"]');
+                    checkbox.checked = !checkbox.checked;
+                    checkbox.dispatchEvent(new Event('change'));
+                }
+            });
+        });
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            loadState();
+            initTheme();
+            initCheckboxes();
+            initAccordion();
+            initStickyProgress();
+            updateProgress();
+        });
+    </script>
+</body>
+</html>
