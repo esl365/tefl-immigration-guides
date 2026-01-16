@@ -1515,6 +1515,111 @@
         }
 
         /* ========================================
+           SECTION TITLE
+           ======================================== */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 40px 0 24px;
+        }
+
+        .section-title-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(20, 184, 166, 0.1);
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+        }
+
+        [data-theme="dark"] .section-title-icon {
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        /* ========================================
+           FAQ SECTION
+           ======================================== */
+        .faq-section {
+            margin-top: 40px;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.2s var(--ease-out);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-300);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 18px 20px;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            font-family: inherit;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-hover);
+        }
+
+        .faq-chevron {
+            font-size: 1rem;
+            color: var(--text-muted);
+            transition: transform 0.3s var(--ease-out);
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s var(--ease-out);
+        }
+
+        .faq-item.open .faq-answer {
+            grid-template-rows: 1fr;
+        }
+
+        .faq-answer-inner {
+            overflow: hidden;
+        }
+
+        .faq-answer-content {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ========================================
            FORMS SECTION
            ======================================== */
         .forms-section {
@@ -1745,7 +1850,7 @@
                 <a href="New Teachers Guide for Employers v1.0_ko.html" class="nav-link employer">
                     <span>🏫</span> 신규강사 (고용주)
                 </a>
-                <a href="Visa Transfer Guide for Employers v1.0_ko.html" class="nav-link employer active">
+                <a href="Visa Transfer Guide for Employers v4.0_ko.html" class="nav-link employer active">
                     <span>🏫</span> 이직강사 (고용주)
                 </a>
             </div>
@@ -2499,6 +2604,86 @@
             <p>교육청에서 최근 검진을 요구하는 경우, 재검진이 필요할 수 있습니다. 교육청에 먼저 확인하세요.</p>
         </section>
 
+        <!-- FAQ Section -->
+        <section class="faq-section" aria-label="자주 묻는 질문">
+            <h2 class="section-title">
+                <div class="section-title-icon">❓</div>
+                자주 묻는 질문 (FAQ)
+            </h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this.parentElement)">
+                        <span>온라인으로 예약이 안 될 경우 어떻게 하나요?</span>
+                        <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <div class="faq-answer-content">
+                                15일째 되는 날(근무시작일 미포함) 출입국에 직접 방문하세요. 대기 시간이 길 수 있으니 일찍 도착하는 것이 좋습니다. 일부 출입국사무소는 공식 개장 전에 번호표를 배부합니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this.parentElement)">
+                        <span>이적동의서가 항상 필요한가요?</span>
+                        <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <div class="faq-answer-content">
+                                아니요, 계약기간을 완료한 경우에는 필요하지 않습니다. 전 직장이 폐업했거나 임금체불이 있는 경우, 사유서로 대체할 수 있습니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this.parentElement)">
+                        <span>건강검진은 언제 해야 하나요?</span>
+                        <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <div class="faq-answer-content">
+                                건강검진은 출입국 신고에는 필요하지 <strong>않습니다</strong> - 교육청 등록에만 필요합니다. 신규 학원에서 시기와 장소를 안내해 드릴 것입니다. 출입국 방문 전후 언제든 가능합니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this.parentElement)">
+                        <span>아포스티유 서류가 없으면 어떻게 하나요?</span>
+                        <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <div class="faq-answer-content">
+                                먼저 출입국에 다른 서류를 제출하세요. 초기 제출 완료 후 출입국에서 아포스티유 서류 사본을 요청할 수 있습니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this.parentElement)">
+                        <span>서류 준비 책임은 누구에게 있나요?</span>
+                        <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <div class="faq-answer-content">
+                                궁극적으로 <strong>강사 본인의 책임</strong>입니다. 다만 전 직장과 신규 학원에 필요한 서류 지원을 요청할 수 있고, 그렇게 해야 합니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Forms Section -->
         <section class="forms-section">
             <div class="forms-header">
@@ -2549,7 +2734,7 @@
 
     <!-- Footer -->
     <footer>
-        <p><strong>이직 강사 채용 가이드</strong> (고용주용) v1.0</p>
+        <p><strong>이직 강사 채용 가이드</strong> (고용주용) v4.0</p>
         <p style="margin-top: 8px; font-size: 0.8rem;">진행 상황은 자동 저장됩니다</p>
     </footer>
 
@@ -2558,7 +2743,7 @@
 
     <script>
         // Storage Key
-        const STORAGE_KEY = 'visa_transfer_employer_guide_v1';
+        const STORAGE_KEY = 'visa_transfer_employer_guide_v4';
 
         // State
         let state = {
@@ -2765,6 +2950,11 @@
             document.querySelectorAll('.step').forEach(step => step.classList.remove('open'));
             state.openSteps = [];
             saveState();
+        }
+
+        // FAQ Toggle
+        function toggleFaq(faqItem) {
+            faqItem.classList.toggle('open');
         }
 
         function initAccordion() {
