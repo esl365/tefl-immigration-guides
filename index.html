@@ -390,6 +390,185 @@
                 height: 4px;
             }
         }
+
+        /* ========================================
+           INFO PANEL - Accordion (Visa Extension)
+           ======================================== */
+        .info-panel {
+            background: var(--card-bg);
+            border: var(--neo-border);
+            border-radius: 16px;
+            box-shadow: var(--soft-shadow);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .info-panel.teacher-panel {
+            border-left: 8px solid var(--neo-purple);
+        }
+
+        .info-panel.employer-panel {
+            border-left: 8px solid var(--neo-cyan);
+        }
+
+        .info-panel-header {
+            width: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 24px 28px;
+            text-align: left;
+            color: var(--text);
+            transition: background 0.2s ease;
+        }
+
+        .info-panel-header:hover {
+            background: rgba(124, 58, 237, 0.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .info-panel-header:hover {
+                background: rgba(124, 58, 237, 0.12);
+            }
+        }
+
+        .panel-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            width: fit-content;
+            white-space: nowrap;
+            flex-shrink: 0;
+            border: 2px solid currentColor;
+            box-shadow: var(--soft-shadow-sm);
+        }
+
+        .teacher-panel .panel-badge {
+            background: var(--neo-purple);
+            color: #ffffff;
+            border-color: var(--neo-purple);
+        }
+
+        .employer-panel .panel-badge {
+            background: var(--neo-cyan);
+            color: #1a1a2e;
+            border-color: var(--neo-cyan);
+        }
+
+        .panel-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            flex-grow: 1;
+            line-height: 1.3;
+        }
+
+        .panel-chevron {
+            font-size: 1.4rem;
+            line-height: 1;
+            flex-shrink: 0;
+            transition: transform 0.25s ease;
+            color: var(--text-muted);
+        }
+
+        .info-panel.is-open .panel-chevron {
+            transform: rotate(180deg);
+        }
+
+        .info-panel-body {
+            display: none;
+            padding: 0 28px 28px;
+        }
+
+        .info-panel.is-open .info-panel-body {
+            display: block;
+        }
+
+        .panel-intro {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-bottom: 20px;
+        }
+
+        .panel-docs-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .panel-docs-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .panel-docs-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .doc-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .teacher-panel .doc-num {
+            background: var(--neo-purple);
+            color: #ffffff;
+        }
+
+        .employer-panel .doc-num {
+            background: var(--neo-cyan);
+            color: #1a1a2e;
+        }
+
+        .doc-text {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        .doc-note {
+            display: block;
+            font-size: 0.82rem;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        @media (max-width: 640px) {
+            .info-panel-header {
+                padding: 18px 20px;
+            }
+
+            .info-panel-body {
+                padding: 0 20px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -415,6 +594,28 @@
             </a>
         </div>
 
+        <div class="info-panel teacher-panel" id="panel-extension-en">
+            <button class="info-panel-header" aria-expanded="false" onclick="togglePanel('panel-extension-en')">
+                <span class="panel-badge">Visa Extension</span>
+                <span class="panel-title">Staying With Your Current Employer? Here's What You Need</span>
+                <span class="panel-chevron">⌄</span>
+            </button>
+            <div class="info-panel-body">
+                <p class="panel-intro">If you're renewing with your existing employer (not changing workplaces), you only need a stay extension — not a full visa transfer. You can apply from 4 months before your ARC expiry date.</p>
+                <p class="panel-docs-title">Required Documents</p>
+                <ol class="panel-docs-list">
+                    <li><span class="doc-num">1</span><span class="doc-text">Application form (Form 34), passport, ARC, and application fee</span></li>
+                    <li><span class="doc-num">2</span><span class="doc-text">Employment contract (original + copy)</span></li>
+                    <li><span class="doc-num">3</span><span class="doc-text">Copy of business registration certificate</span></li>
+                    <li><span class="doc-num">4</span><span class="doc-text">Copy of hagwon establishment certificate (if applicable)</span></li>
+                    <li><span class="doc-num">5</span><span class="doc-text">Supplementary criminal record / education documents (if flagged by immigration)</span></li>
+                    <li><span class="doc-num">6</span><span class="doc-text">Certificate of income amount<span class="doc-note">Note: if your employer reports business income instead of employment income, a correction may be required before this document is accepted.</span></span></li>
+                    <li><span class="doc-num">7</span><span class="doc-text">Proof of residence (lease agreement, utility bills, etc.)</span></li>
+                    <li><span class="doc-num">8</span><span class="doc-text">Class timetable</span></li>
+                </ol>
+            </div>
+        </div>
+
         <div class="divider"></div>
 
         <p class="section-title">For Employers (한국어)</p>
@@ -433,9 +634,39 @@
             </a>
         </div>
 
+        <div class="info-panel employer-panel" id="panel-extension-ko">
+            <button class="info-panel-header" aria-expanded="false" onclick="togglePanel('panel-extension-ko')">
+                <span class="panel-badge">체류기간 연장</span>
+                <span class="panel-title">기존 고용주와 계약 연장 시 체류기간 연장 절차 안내</span>
+                <span class="panel-chevron">⌄</span>
+            </button>
+            <div class="info-panel-body">
+                <p class="panel-intro">기존 고용주와 계약을 연장하는 경우(직장 변경 없음)에는 비자 변경이 아닌 체류기간 연장 신청만 진행합니다. 외국인등록증(ARC) 만료일 이전 4개월부터 신청 가능합니다.</p>
+                <p class="panel-docs-title">제출 서류</p>
+                <ol class="panel-docs-list">
+                    <li><span class="doc-num">1</span><span class="doc-text">통합신청서(서식 34호), 여권, 외국인등록증, 수수료</span></li>
+                    <li><span class="doc-num">2</span><span class="doc-text">근로계약서 (원본 + 사본)</span></li>
+                    <li><span class="doc-num">3</span><span class="doc-text">사업자등록증 사본</span></li>
+                    <li><span class="doc-num">4</span><span class="doc-text">학원설립·운영등록증 사본 (해당 시)</span></li>
+                    <li><span class="doc-num">5</span><span class="doc-text">범죄경력증명서 / 학력증명 서류 (출입국관리사무소에서 요청 시)</span></li>
+                    <li><span class="doc-num">6</span><span class="doc-text">소득금액증명원<span class="doc-note">※ 사업소득으로 신고된 경우, 근로소득으로 경정 후 서류 제출이 필요할 수 있습니다.</span></span></li>
+                    <li><span class="doc-num">7</span><span class="doc-text">거주지 증빙 서류 (임대차계약서, 공과금 영수증 등)</span></li>
+                    <li><span class="doc-num">8</span><span class="doc-text">수업 시간표</span></li>
+                </ol>
+            </div>
+        </div>
+
         <footer>
             <p>Created by <strong>Kang & Kriel Recruitment</strong></p>
         </footer>
     </div>
+    <script>
+        function togglePanel(id) {
+            var panel = document.getElementById(id);
+            var btn   = panel.querySelector('.info-panel-header');
+            var isOpen = panel.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+    </script>
 </body>
 </html>
