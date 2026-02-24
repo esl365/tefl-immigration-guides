@@ -560,6 +560,81 @@
             margin-top: 2px;
         }
 
+        /* Apply methods section */
+        .panel-apply-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .apply-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px 16px;
+            background: var(--bg);
+            border-radius: 10px;
+            box-shadow: var(--soft-shadow-inset);
+        }
+
+        .apply-method-tag {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .teacher-panel .apply-method-tag {
+            background: var(--neo-purple);
+            color: #ffffff;
+        }
+
+        .employer-panel .apply-method-tag {
+            background: var(--neo-cyan);
+            color: #1a1a2e;
+        }
+
+        .apply-method-content {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        .apply-method-content p {
+            margin-bottom: 4px;
+        }
+
+        .apply-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--neo-purple);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .apply-link:hover {
+            text-decoration: underline;
+        }
+
+        .employer-panel .apply-link {
+            color: var(--teal);
+        }
+
+        .apply-menu-note {
+            display: block;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
         @media (max-width: 640px) {
             .info-panel-header {
                 padding: 18px 20px;
@@ -613,6 +688,25 @@
                     <li><span class="doc-num">7</span><span class="doc-text">Proof of residence (lease agreement, utility bills, etc.)</span></li>
                     <li><span class="doc-num">8</span><span class="doc-text">Class timetable</span></li>
                 </ol>
+
+                <p class="panel-docs-title" style="margin-top: 24px;">How to Apply</p>
+                <p class="panel-intro" style="margin-bottom: 12px;">You can apply online or in person. Online applications require registering an account at <a class="apply-link" href="https://www.hikorea.go.kr/">hikorea.go.kr</a> first.</p>
+                <div class="panel-apply-methods">
+                    <div class="apply-method">
+                        <span class="apply-method-tag">Online</span>
+                        <div class="apply-method-content">
+                            <p>Go to the application page and select <strong>등록외국인의 체류기간연장허가</strong></p>
+                            <a class="apply-link" href="https://www.hikorea.go.kr/cvlappl/CvlapplStep1.pt">https://www.hikorea.go.kr/cvlappl/CvlapplStep1.pt</a>
+                        </div>
+                    </div>
+                    <div class="apply-method">
+                        <span class="apply-method-tag">In Person</span>
+                        <div class="apply-method-content">
+                            <p>Book an appointment first, then visit your immigration office and select <strong>등록외국인의 체류기간연장허가</strong></p>
+                            <a class="apply-link" href="https://www.hikorea.go.kr/resv/ResvIntroR.pt">https://www.hikorea.go.kr/resv/ResvIntroR.pt</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -653,6 +747,25 @@
                     <li><span class="doc-num">7</span><span class="doc-text">거주지 증빙 서류 (임대차계약서, 공과금 영수증 등)</span></li>
                     <li><span class="doc-num">8</span><span class="doc-text">수업 시간표</span></li>
                 </ol>
+
+                <p class="panel-docs-title" style="margin-top: 24px;">신청 방법</p>
+                <p class="panel-intro" style="margin-bottom: 12px;">온라인 또는 방문 신청 모두 가능합니다. 온라인 신청 시에는 <a class="apply-link" href="https://www.hikorea.go.kr/">hikorea.go.kr</a>에서 원어민 강사가 회원 가입 후 신청하시면 됩니다.</p>
+                <div class="panel-apply-methods">
+                    <div class="apply-method">
+                        <span class="apply-method-tag">온라인</span>
+                        <div class="apply-method-content">
+                            <p>아래 링크 접속 후 <strong>등록외국인의 체류기간연장허가</strong> 메뉴 선택</p>
+                            <a class="apply-link" href="https://www.hikorea.go.kr/cvlappl/CvlapplStep1.pt">https://www.hikorea.go.kr/cvlappl/CvlapplStep1.pt</a>
+                        </div>
+                    </div>
+                    <div class="apply-method">
+                        <span class="apply-method-tag">방문</span>
+                        <div class="apply-method-content">
+                            <p>아래 링크에서 방문 예약 후, 출입국관리사무소 방문 시 <strong>등록외국인의 체류기간연장허가</strong> 메뉴 선택</p>
+                            <a class="apply-link" href="https://www.hikorea.go.kr/resv/ResvIntroR.pt">https://www.hikorea.go.kr/resv/ResvIntroR.pt</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
